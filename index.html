@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exodrinks In Bali – Es Teler Sultan Cabang Bandung</title>
+  <meta name="description" content="The Authentic Indonesian Drinks. Es Teler Sultan Cabang Bandung di 20 outlet resmi Exodrinks Bali. Pesan Es Teler Ori & Es Teler Durian asli." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+            display: ['"Anton"', 'sans-serif'],
+            condensed: ['"Oswald"', 'sans-serif'],
+            script: ['"Yellowtail"', 'cursive'],
+          },
+          colors: {
+            baliPurple: {
+              50: '#FAF5FF',
+              100: '#F3E8FF',
+              200: '#E9D5FF',
+              300: '#D8B4FE',
+              600: '#7E22CE',
+              700: '#6B21A8',
+              800: '#4C1D95',
+              900: '#3B0764',
+              950: '#2E1065',
+            }
+          },
+          boxShadow: {
+            'editorial': '0 20px 50px -15px rgba(46, 16, 101, 0.14)',
+            'sticker': '0 16px 32px rgba(46, 16, 101, 0.38)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF5FF;
+      color: #1E1035;
+    }
+    .hero-purple-editorial {
+      background: radial-gradient(circle at 80% 25%, #6B21A8 0%, #4C1D95 45%, #2E1065 100%);
+    }
+    .sticker-diecut {
+      filter: drop-shadow(0 0 2px #ffffff)
+              drop-shadow(0 0 3px #ffffff)
+              drop-shadow(0 14px 28px rgba(30, 16, 53, 0.45));
+    }
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    .float-slow {
+      animation: gentleFloat 4.5s ease-in-out infinite;
+    }
+    .photo-pure {
+      object-fit: contain;
+    }
+    .photo-multiply {
+      mix-blend-mode: multiply;
+    }
+    .logo-blend-dark {
+      filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+    }
+    .headline-lockup-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF5FF 100%);
+      box-shadow: 0 22px 48px -12px rgba(20, 4, 48, 0.55), 0 0 0 3px rgba(251, 191, 36, 0.55);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-baliPurple-800 selection:text-white">
+
+  <input type="file" id="global-photo-picker" accept="image/*" class="hidden" onchange="handleGlobalSlotFileChange(event)" />
+
+  <!-- 1. HEADER & NAVIGASI STICKY -->
+  <header class="sticky top-0 z-40 bg-baliPurple-950/95 backdrop-blur-md border-b border-white/10 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="#" class="flex items-center gap-2.5 group focus:outline-none">
+          <div id="navbar-logo-container" class="h-11 flex items-center justify-center overflow-hidden group-hover:scale-105 transition">
+            <img src="./images/logo-exodrinks.png" data-fallback="image_337a81.png" onerror="if(!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback;}" alt="EXO drinks Logo" class="h-10 w-auto object-contain logo-blend-dark" />
+          </div>
+          <span class="text-[11px] font-extrabold text-amber-300 tracking-wider uppercase">In Bali</span>
+        </a>
+        <button onclick="openSlotNameAndUploadModal('logoBrand')" title="Unggah & Edit Nama Logo" class="hidden xl:inline-flex items-center gap-1 bg-white/10 hover:bg-white/20 text-amber-300 border border-amber-300/30 px-2.5 py-1 rounded-full text-[11px] font-bold transition cursor-pointer">
+          <span>✏️ Unggah & Edit Nama</span>
+        </button>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-purple-100">
+        <a href="#menu" class="hover:text-amber-300 transition">Menu Utama</a>
+        <a href="#cerita" class="hover:text-amber-300 transition">Cerita & Kualitas</a>
+        <a href="#promo" class="hover:text-amber-300 transition">Promo Sultan</a>
+        <a href="#berita" class="hover:text-amber-300 transition">Berita & Update</a>
+        <a href="#outlet" class="hover:text-amber-300 transition">20 Outlet Bali</a>
+        <button onclick="togglePreviewModal(true)" class="bg-white/10 hover:bg-white/20 text-amber-300 border border-amber-300/40 px-3.5 py-1.5 rounded-full text-xs font-extrabold transition cursor-pointer">
+          📸 Unggah & Edit Nama (<span id="uploaded-count-nav">0</span>/9)
+        </button>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <button onclick="togglePreviewModal(true)" class="inline-flex lg:hidden items-center gap-1.5 bg-white/10 hover:bg-white/20 text-amber-300 font-bold px-3.5 py-2 rounded-full text-xs border border-amber-300/30 transition cursor-pointer">
+          <span>📸 Unggah & Nama</span>
+        </button>
+
+        <button onclick="toggleCart(true)" class="relative inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold px-4 sm:px-5 py-2.5 rounded-full text-sm shadow-lg transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span>Keranjang</span>
+          <span id="cart-badge" class="bg-baliPurple-950 text-amber-300 text-xs font-black px-2 py-0.5 rounded-full">0</span>
+        </button>
+
+        <button id="mobile-nav-btn" aria-label="Buka Menu" class="lg:hidden p-2 rounded-xl text-white hover:bg-white/10 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-nav-menu" class="hidden lg:hidden bg-baliPurple-950 border-t border-white/10 px-4 py-4 space-y-2">
+      <a href="#menu" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-bold text-white hover:bg-white/10">Menu Utama</a>
+      <a href="#cerita" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-bold text-white hover:bg-white/10">Cerita & Kualitas</a>
+      <a href="#promo" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-bold text-white hover:bg-white/10">Promo Sultan</a>
+      <a href="#berita" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-bold text-white hover:bg-white/10">Berita & Update</a>
+      <a href="#outlet" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-bold text-white hover:bg-white/10">20 Outlet Bali</a>
+      <button onclick="togglePreviewModal(true)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-amber-300 hover:bg-white/10">
+        📸 Unggah Foto & Edit Nama (9 Slot)
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION SPLIT-EDITORIAL (UNGU & FOTO PURA BALI) -->
+  <section class="relative overflow-hidden hero-purple-editorial text-white pt-10 pb-20 lg:pt-16 lg:pb-24">
+    <!-- Slot 2: Foto Pura Bali -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <img
+        id="hero-pura-img"
+        src="./images/pura-bali.png"
+        data-fallback="image_336ba3.jpg"
+        onerror="if(!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback;}else{this.classList.add('hidden');document.getElementById('hero-pura-svg').classList.remove('hidden');}"
+        alt="Pura Ulun Danu Beratan Bali"
+        class="w-full h-full object-cover object-center opacity-35 mix-blend-luminosity"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-baliPurple-950/85 via-baliPurple-900/65 to-baliPurple-950/85"></div>
+
+      <svg id="hero-pura-svg" viewBox="0 0 1440 620" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden w-full h-full object-cover opacity-30">
+        <path d="M0 430 Q340 260 720 400 T1440 330 L1440 620 L0 620 Z" fill="#1C0542"/>
+        <path d="M0 495 Q480 375 960 485 T1440 440 L1440 620 L0 620 Z" fill="#13022E"/>
+        <g transform="translate(95, 70)" fill="#160336">
+          <polygon points="160,0 146,28 174,28"/>
+          <polygon points="160,24 134,54 186,54"/>
+          <polygon points="160,48 122,82 198,82"/>
+          <polygon points="160,74 110,112 210,112"/>
+          <polygon points="160,102 98,144 222,144"/>
+          <polygon points="160,132 86,178 234,178"/>
+          <polygon points="160,164 72,214 248,214"/>
+          <polygon points="160,198 58,252 262,252"/>
+          <rect x="98" y="252" width="124" height="78"/>
+          <rect x="142" y="274" width="36" height="56" fill="#3B0764"/>
+          <rect x="72" y="330" width="176" height="32"/>
+          <rect x="46" y="362" width="228" height="90"/>
+        </g>
+        <g transform="translate(1110, 230)" fill="#160336">
+          <polygon points="55,0 20,185 82,185 82,0"/>
+          <polygon points="155,0 128,0 128,185 190,185"/>
+          <rect x="8" y="185" width="194" height="125"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Kolom Kiri: Editorial Copy -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+            <div class="inline-flex items-center gap-2.5 bg-white/12 backdrop-blur-md border border-amber-300/35 px-4 py-1.5 rounded-full text-amber-300 font-extrabold text-xs sm:text-sm">
+              <span>🌺 Exodrinks In Bali</span>
+              <span>•</span>
+              <span>20 Outlet Resmi</span>
+            </div>
+            <button onclick="openSlotNameAndUploadModal('puraBg')" class="inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-3.5 py-1.5 rounded-full text-xs transition cursor-pointer">
+              <span>🔄 Unggah & Edit Nama Pura</span>
+            </button>
+          </div>
+
+          <div class="headline-lockup-card rounded-3xl px-5 py-6 sm:px-8 sm:py-7 max-w-2xl mx-auto lg:mx-0 text-center">
+            <h1 class="leading-none select-none">
+              <span class="block font-display uppercase text-[#3B0764] text-[2.45rem] sm:text-[3.65rem] xl:text-[4.15rem] tracking-[0.015em] leading-[0.96]">
+                ES TELER SULTAN
+              </span>
+              <span class="mt-1 sm:mt-1.5 flex items-center justify-center gap-3 sm:gap-5 leading-none">
+                <span class="font-script text-[#EF2313] text-[2.35rem] sm:text-[3.4rem] xl:text-[3.85rem] -rotate-4 inline-block tracking-normal pr-1">
+                  Cabang
+                </span>
+                <span class="font-display uppercase text-[#3B0764] text-[2.45rem] sm:text-[3.65rem] xl:text-[4.15rem] tracking-[0.015em] leading-[0.96]">
+                  BANDUNG
+                </span>
+              </span>
+              <span class="block mt-2 sm:mt-2.5 font-condensed font-bold text-[#3B0764] text-lg sm:text-[1.6rem] xl:text-[1.8rem] tracking-tight leading-tight">
+                “The Authentic Indonesian Drinks”
+              </span>
+            </h1>
+          </div>
+
+          <p class="text-sm sm:text-base text-purple-100/90 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Dari garasi sederhana di Margacinta Bandung hingga hadir di <strong>20 titik strategis Pulau Dewata</strong>. Nikmati racikan <strong>Es Teler Ori</strong> dan <strong>Es Teler Durian</strong> dengan potongan daging durian asli pilihan.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1">
+            <a href="#menu" class="bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold px-7 py-3.5 rounded-full shadow-xl transition text-sm sm:text-base inline-flex items-center gap-2">
+              <span>Pesan Sekarang</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="#outlet" class="bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-6 py-3.5 rounded-full transition text-sm sm:text-base">
+              Lihat 20 Outlet
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-white/15 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs font-bold">
+            <span class="uppercase tracking-wider text-amber-300">*Tersedia Juga di:</span>
+            <span class="bg-white text-emerald-700 px-3.5 py-1.5 rounded-full font-extrabold shadow-xs">GrabFood</span>
+            <span class="bg-white text-red-600 px-3.5 py-1.5 rounded-full font-extrabold shadow-xs">GoFood</span>
+            <span class="bg-white text-orange-600 px-3.5 py-1.5 rounded-full font-extrabold shadow-xs">ShopeeFood</span>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Slot 3 Foto Utama Hero -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md float-slow">
+            <div class="relative rounded-[2rem] bg-gradient-to-b from-purple-700/65 to-baliPurple-950/90 border-2 border-amber-300/45 p-6 sm:p-7 shadow-2xl overflow-hidden">
+              <div class="flex items-center justify-between gap-2 text-xs font-extrabold mb-3">
+                <span id="hero-slot-badge-label" class="bg-baliPurple-950/85 text-amber-300 px-3.5 py-1.5 rounded-full border border-amber-300/30 truncate">
+                  ⛩️ Exodrinks Bali Edition
+                </span>
+                <span class="bg-red-600 text-white px-3.5 py-1.5 rounded-full shadow-xs shrink-0">
+                  Mulai Rp 10.000
+                </span>
+              </div>
+
+              <div class="relative flex items-center justify-center py-2">
+                <div id="hero-mascot-photo-wrap" class="hidden w-full aspect-square max-h-80 rounded-2xl bg-white/95 p-3 border-2 border-amber-300 shadow-xl flex items-center justify-center overflow-hidden">
+                  <img id="hero-mascot-img" src="" alt="Foto Asli Hero Exodrinks Bali" class="w-full h-full object-contain rounded-xl" />
+                </div>
+
+                <svg id="hero-mascot-svg" viewBox="0 0 360 360" class="w-72 h-72 sm:w-80 sm:h-80 sticker-diecut" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.28" fill="#FDE68A">
+                    <polygon points="82,45 64,72 100,72"/>
+                    <polygon points="82,66 56,98 108,98"/>
+                    <polygon points="82,90 48,126 116,126"/>
+                    <polygon points="82,116 38,156 126,156"/>
+                    <rect x="54" y="156" width="56" height="60"/>
+                  </g>
+                  <g transform="translate(284, 58)">
+                    <circle cx="0" cy="-14" r="9" fill="#FFFFFF"/>
+                    <circle cx="13" cy="-4" r="9" fill="#FFFFFF"/>
+                    <circle cx="8" cy="11" r="9" fill="#FFFFFF"/>
+                    <circle cx="-8" cy="11" r="9" fill="#FFFFFF"/>
+                    <circle cx="-13" cy="-4" r="9" fill="#FFFFFF"/>
+                    <circle cx="0" cy="0" r="6" fill="#FACC15"/>
+                  </g>
+                  <g stroke="#FFFFFF" stroke-width="11" stroke-linejoin="round" fill="none">
+                    <circle cx="205" cy="135" r="56"/>
+                    <path d="M135 286 C135 215, 275 215, 275 286 Z"/>
+                    <rect x="64" y="132" width="78" height="112" rx="14"/>
+                  </g>
+                  <path d="M135 294 C135 215, 275 215, 275 294 Z" fill="#FFFFFF"/>
+                  <path d="M150 250 L260 250 L272 294 L138 294 Z" fill="#4C1D95"/>
+                  <path d="M150 250 L260 250 L263 263 L147 263 Z" fill="#F59E0B"/>
+                  <circle cx="205" cy="140" r="50" fill="#FDBA74"/>
+                  <circle cx="255" cy="142" r="10" fill="#FDBA74"/>
+                  <circle cx="258" cy="126" r="8" fill="#FFFFFF"/>
+                  <circle cx="258" cy="126" r="3" fill="#FACC15"/>
+                  <path d="M152 125 C155 78, 255 78, 258 125 C235 112, 175 112, 152 125 Z" fill="#78350F"/>
+                  <path d="M155 122 Q205 104 255 122 L252 134 Q205 116 158 134 Z" fill="#D97706"/>
+                  <polygon points="205,64 188,96 205,88 222,96" fill="#92400E"/>
+                  <polygon points="205,70 194,95 205,89 216,95" fill="#F59E0B"/>
+                  <path d="M180 136 Q188 128 196 136" stroke="#1E1035" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <circle cx="222" cy="135" r="5" fill="#1E1035"/>
+                  <circle cx="224" cy="133" r="1.8" fill="#FFFFFF"/>
+                  <path d="M188 156 Q205 174 222 156 Z" fill="#DC2626"/>
+                  <path d="M193 163 Q205 171 217 163 Z" fill="#FCA5A5"/>
+                  <path d="M192 225 Q162 215 148 198" stroke="#FDBA74" stroke-width="18" stroke-linecap="round" fill="none"/>
+                  <circle cx="145" cy="195" r="11" fill="#FDBA74"/>
+                  <g transform="translate(65, 132)">
+                    <polygon points="8,24 68,24 60,108 16,108" fill="#FEF3C7" stroke="#4C1D95" stroke-width="3"/>
+                    <rect x="10" y="16" width="56" height="14" rx="6" fill="#FACC15"/>
+                    <circle cx="22" cy="18" r="8" fill="#65A30D"/>
+                    <circle cx="52" cy="18" r="8" fill="#84CC16"/>
+                    <rect x="18" y="34" width="12" height="10" rx="2" fill="#1E1035"/>
+                    <rect x="44" y="42" width="12" height="10" rx="2" fill="#1E1035"/>
+                    <circle cx="26" cy="68" r="4" fill="#EC4899"/>
+                    <circle cx="38" cy="76" r="4" fill="#EC4899"/>
+                    <circle cx="48" cy="64" r="4" fill="#EC4899"/>
+                    <rect x="17" y="46" width="42" height="20" rx="4" fill="#4C1D95"/>
+                    <text x="38" y="60" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="900" font-family="sans-serif">EXO</text>
+                  </g>
+                  <rect x="64" y="294" width="232" height="34" rx="17" fill="#F59E0B" stroke="#FFFFFF" stroke-width="3"/>
+                  <text x="180" y="316" text-anchor="middle" fill="#2E1065" font-size="12.5" font-weight="900" font-family="sans-serif">EXODRINKS BALI</text>
+                </svg>
+              </div>
+
+              <div class="mt-3 pt-3 border-t border-white/15 flex items-center justify-between gap-2">
+                <button id="btn-hero-upload" onclick="openSlotNameAndUploadModal('heroMascot')" class="flex-1 bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold py-2.5 px-4 rounded-xl text-xs shadow transition cursor-pointer">
+                  + Unggah Foto & Edit Nama
+                </button>
+                <button id="btn-hero-reset" onclick="resetPhotoSlot('heroMascot')" class="hidden bg-white/15 hover:bg-white/25 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition cursor-pointer">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. KATALOG PRODUK UNGGULAN -->
+  <section id="menu" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="inline-block bg-baliPurple-100 text-baliPurple-800 font-extrabold text-xs uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-3">
+        Menu Utama Resmi
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-baliPurple-950 tracking-tight">
+        Produk Unggulan Es Teler Sultan
+      </h2>
+      <p class="mt-3 text-baliPurple-950/70 text-sm sm:text-base">
+        Racikan autentik khas Exodrinks Cabang Bandung. Klik <strong>+ Unggah Foto & Edit Nama</strong> pada tiap kartu untuk mengunggah foto serta mengubah nama varian atau nama file-nya.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10">
+      <button onclick="setMenuFilter('all')" data-menu-filter="all" class="menu-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-baliPurple-900 text-amber-300 shadow-md transition cursor-pointer">
+        Semua Varian (4)
+      </button>
+      <button onclick="setMenuFilter('ES TELER ORI')" data-menu-filter="ES TELER ORI" class="menu-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-baliPurple-900 border-2 border-baliPurple-200 hover:bg-baliPurple-100 transition cursor-pointer">
+        Es Teler Ori
+      </button>
+      <button onclick="setMenuFilter('ES TELER DURIAN')" data-menu-filter="ES TELER DURIAN" class="menu-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-baliPurple-900 border-2 border-baliPurple-200 hover:bg-baliPurple-100 transition cursor-pointer">
+        Es Teler Durian
+      </button>
+      <label class="inline-flex items-center gap-2 bg-white border-2 border-baliPurple-200 px-4 py-2 rounded-full text-xs font-bold text-baliPurple-950 cursor-pointer select-none">
+        <input type="checkbox" id="toggle-multiply-mode" onchange="toggleMultiplyMode(this.checked)" class="accent-baliPurple-800 rounded" />
+        <span>Hapus Background Putih (Multiply)</span>
+      </label>
+    </div>
+
+    <div id="menu-grid" class="grid md:grid-cols-2 gap-7"></div>
+  </section>
+
+  <!-- 4. CERITA & KEUNGGULAN EDITORIAL -->
+  <section id="cerita" class="py-16 sm:py-20 bg-white border-y border-baliPurple-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="inline-block bg-baliPurple-100 text-baliPurple-800 font-extrabold text-xs uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
+            Cerita & Kualitas
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-baliPurple-950 leading-tight">
+            Dari Garasi di Margacinta Hingga Menyebar ke Seluruh Bali
+          </h2>
+          <p class="text-sm sm:text-base text-baliPurple-950/75 leading-relaxed">
+            Exodrinks lahir dari semangat menghadirkan minuman tradisional Indonesia dengan standar kesegaran modern. Setiap cup diracik dengan buah-buahan segar pilihan dan kuah krimer khas yang langsung memanjakan lidah di cuaca tropis Bali.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6 grid sm:grid-cols-3 gap-4">
+          <div class="p-6 rounded-3xl bg-baliPurple-50 border border-baliPurple-200/80 space-y-2">
+            <div class="w-11 h-11 rounded-2xl bg-baliPurple-900 text-amber-300 flex items-center justify-center text-xl font-black">
+              🥑
+            </div>
+            <h3 class="font-extrabold text-base text-baliPurple-950">Buah Segar Pilihan</h3>
+            <p class="text-xs text-baliPurple-950/70 leading-relaxed">
+              Alpukat mentega, nangka manis, dan kelapa muda segar setiap hari.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-baliPurple-50 border border-baliPurple-200/80 space-y-2">
+            <div class="w-11 h-11 rounded-2xl bg-baliPurple-900 text-amber-300 flex items-center justify-center text-xl font-black">
+              👑
+            </div>
+            <h3 class="font-extrabold text-base text-baliPurple-950">Durian Asli Fillet</h3>
+            <p class="text-xs text-baliPurple-950/70 leading-relaxed">
+              Varian Durian menggunakan toping daging Durian ASLI yang difillet dan dibekukan.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-baliPurple-50 border border-baliPurple-200/80 space-y-2">
+            <div class="w-11 h-11 rounded-2xl bg-baliPurple-900 text-amber-300 flex items-center justify-center text-xl font-black">
+              📍
+            </div>
+            <h3 class="font-extrabold text-base text-baliPurple-950">20 Outlet Bali</h3>
+            <p class="text-xs text-baliPurple-950/70 leading-relaxed">
+              Hadir dekat dengan Anda di Denpasar, Kuta, hingga Kuta Utara.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PROMO SULTAN -->
+  <section id="promo" class="py-16 sm:py-20 bg-gradient-to-br from-baliPurple-950 via-baliPurple-900 to-baliPurple-800 text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="inline-block bg-amber-400/20 border border-amber-300/40 text-amber-300 font-extrabold text-xs uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-3">
+          Promo Resmi Exodrinks Bali
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold">
+          Promo Pesanan Banyak & Acara
+        </h2>
+      </div>
+
+      <div class="mb-8 rounded-3xl bg-white/10 border-2 border-dashed border-amber-300/50 p-5 sm:p-6">
+        <div id="promo-photo-preview-wrap" class="hidden mb-4">
+          <img id="promo-banner-img" src="" alt="Foto Asli Banner Promo" class="w-full max-h-80 object-contain rounded-2xl bg-white p-2 shadow-xl mx-auto" />
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-center sm:text-left">
+            <p id="promo-slot-title" class="text-sm font-extrabold text-amber-300">📸 Slot Foto Banner / Flyer Promo Asli</p>
+            <p class="text-xs text-purple-200 mt-0.5">Unggah foto flyer promo atau ubah nama label & file fotonya di sini.</p>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="btn-promo-upload" onclick="openSlotNameAndUploadModal('promoBanner')" class="bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold px-4 py-2.5 rounded-full text-xs shadow transition cursor-pointer">
+              + Unggah Foto & Edit Nama
+            </button>
+            <button id="btn-promo-reset" onclick="resetPhotoSlot('promoBanner')" class="hidden bg-white/15 hover:bg-white/25 text-white font-bold px-3.5 py-2.5 rounded-full text-xs transition cursor-pointer">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-7 items-stretch">
+        <div class="bg-white text-baliPurple-950 rounded-3xl p-7 sm:p-9 shadow-2xl border-4 border-amber-400 flex flex-col justify-between space-y-5">
+          <div>
+            <span class="inline-block bg-baliPurple-100 text-baliPurple-800 text-xs font-extrabold px-3.5 py-1 rounded-full uppercase">
+              Promo Pembelian 30 Cup
+            </span>
+            <h3 class="mt-4 text-2xl sm:text-3xl font-extrabold text-baliPurple-950">
+              Pembelian 30 Cup
+            </h3>
+            <p class="mt-1.5 text-3xl sm:text-4xl font-black text-red-600 tracking-tight">
+              *FREE ONGKIR
+            </p>
+            <p class="mt-3 text-xs sm:text-sm text-baliPurple-950/75 leading-relaxed">
+              Berlaku untuk total pembelian minimal 30 cup (boleh campur varian Ori & Durian).
+            </p>
+          </div>
+          <button onclick="addPromoBundle(30)" class="w-full py-3.5 px-5 rounded-2xl bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold text-xs sm:text-sm transition cursor-pointer">
+            + Masukkan Paket 30 Cup Ori Kecil (Rp 300.000)
+          </button>
+        </div>
+
+        <div class="bg-white text-baliPurple-950 rounded-3xl p-7 sm:p-9 shadow-2xl border-4 border-amber-400 flex flex-col justify-between space-y-5">
+          <div>
+            <span class="inline-block bg-amber-100 text-amber-900 text-xs font-extrabold px-3.5 py-1 rounded-full uppercase">
+              Bonus Kelipatan 40 Cup
+            </span>
+            <h3 class="mt-4 text-2xl sm:text-3xl font-extrabold text-baliPurple-950">
+              Setiap Pembelian Kelipatan 40 Cup
+            </h3>
+            <p class="mt-1.5 text-3xl sm:text-4xl font-black text-red-600 tracking-tight">
+              *FREE 1 CUP
+            </p>
+            <p class="mt-3 text-xs sm:text-sm text-baliPurple-950/75 leading-relaxed">
+              Otomatis mendapat <strong>*FREE 1 CUP</strong> setiap kelipatan 40 cup sekaligus <strong>*FREE ONGKIR</strong>!
+            </p>
+          </div>
+          <button onclick="addPromoBundle(40)" class="w-full py-3.5 px-5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold text-xs sm:text-sm transition cursor-pointer">
+            + Masukkan Paket 40 Cup Ori Kecil (Free Ongkir + Free 1 Cup)
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5B. BERITA & DOKUMENTASI KEGIATAN -->
+  <section id="berita" class="py-16 sm:py-24 bg-white border-b border-baliPurple-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="inline-block bg-baliPurple-100 text-baliPurple-800 font-extrabold text-xs uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-3">
+            Berita & Dokumentasi Kegiatan
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-baliPurple-950 tracking-tight">
+            Kabar Terbaru Exodrinks Bali
+          </h2>
+          <p class="mt-2 text-baliPurple-950/75 text-sm sm:text-base max-w-2xl">
+            Liputan pembukaan cabang, pesanan acara spesial, hingga galeri foto kegiatan terbaru dari seluruh outlet Exodrinks Bali.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button onclick="openNewsEditorModal()" class="bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold px-6 py-3.5 rounded-full text-xs sm:text-sm shadow-lg transition inline-flex items-center gap-2 cursor-pointer">
+            <span>📰 + Tambah Berita & Foto Baru</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="news-category-filters" class="flex flex-wrap gap-2 mb-8"></div>
+      <div id="news-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+    </div>
+  </section>
+
+  <!-- 6. DAFTAR LENGKAP 20 OUTLET -->
+  <section id="outlet" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 rounded-3xl bg-white border-2 border-baliPurple-200 p-6 sm:p-8 shadow-editorial">
+      <div class="grid lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-5">
+          <div id="outlet-photo-container" class="w-full aspect-video rounded-2xl bg-baliPurple-50 border-2 border-dashed border-baliPurple-300 flex flex-col items-center justify-center p-4 text-center overflow-hidden">
+            <span class="text-3xl mb-2">🏪</span>
+            <p class="text-xs font-extrabold text-baliPurple-950">Belum ada Foto Outlet / Gerobak Asli</p>
+            <p class="text-[11px] text-baliPurple-950/60 mt-1">Rekomendasi file: ./images/outlet-bali.png</p>
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-3 text-center lg:text-left">
+          <span class="inline-block bg-baliPurple-100 text-baliPurple-800 font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full">
+            Dokumentasi Outlet Resmi
+          </span>
+          <h3 id="outlet-showcase-title" class="text-2xl font-extrabold text-baliPurple-950">
+            Suasana Booth & Outlet Exodrinks Bali
+          </h3>
+          <p class="text-xs sm:text-sm text-baliPurple-950/75 leading-relaxed">
+            Unggah foto booth, gerobak ungu ikonik, atau antrean pelanggan, serta edit nama label dan nama file-nya kapan saja.
+          </p>
+          <div class="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+            <button id="btn-outlet-upload" onclick="openSlotNameAndUploadModal('outletShowcase')" class="bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold px-5 py-2.5 rounded-full text-xs shadow transition cursor-pointer">
+              + Unggah Foto & Edit Nama
+            </button>
+            <button id="btn-outlet-reset" onclick="resetPhotoSlot('outletShowcase')" class="hidden bg-baliPurple-100 hover:bg-baliPurple-200 text-baliPurple-900 font-bold px-4 py-2.5 rounded-full text-xs transition cursor-pointer">
+              Reset Foto
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <span class="inline-block bg-baliPurple-100 text-baliPurple-800 font-extrabold text-xs uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-3">
+          Jaringan Outlet Resmi
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-baliPurple-950">
+          20 Lokasi Outlet Exodrinks Bali
+        </h2>
+        <p class="mt-2 text-baliPurple-950/75 text-sm sm:text-base">
+          Tersebar di Denpasar Selatan, Denpasar Barat, Denpasar Utara, Denpasar Timur, Kec. Kuta, dan Kuta Utara.
+        </p>
+      </div>
+
+      <div class="w-full md:w-80 relative">
+        <input
+          type="text"
+          id="outlet-search"
+          oninput="renderOutlets()"
+          placeholder="Cari nama cabang atau jalan..."
+          class="w-full pl-11 pr-4 py-3.5 rounded-2xl border-2 border-baliPurple-200 bg-white text-sm font-medium focus:outline-none focus:border-baliPurple-700 transition"
+        />
+        <svg class="w-4 h-4 text-baliPurple-700 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div id="region-filters" class="flex flex-wrap gap-2 mb-8"></div>
+    <div id="outlet-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+    <div id="outlet-empty" class="hidden text-center py-12 bg-white rounded-3xl border-2 border-baliPurple-100">
+      <p class="font-extrabold text-lg text-baliPurple-950">Cabang tidak ditemukan</p>
+      <p class="text-sm text-baliPurple-950/70 mt-1">Coba pilih filter "Semua (20)" atau ubah kata kunci pencarian jalan.</p>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER LENGKAP -->
+  <footer class="bg-baliPurple-950 text-purple-200 py-14 border-t border-purple-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-white/10">
+        <div>
+          <div class="flex items-center gap-3">
+            <div id="footer-logo-container" class="h-10 flex items-center justify-center overflow-hidden">
+              <img src="./images/logo-exodrinks.png" data-fallback="image_337a81.png" onerror="if(!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback;}" alt="EXO drinks Logo" class="h-9 w-auto object-contain logo-blend-dark" />
+            </div>
+            <span class="text-amber-300 font-extrabold text-sm uppercase tracking-wider">In Bali</span>
+          </div>
+          <p class="text-xs sm:text-sm text-purple-300 mt-2.5">
+            <em>“The Authentic Indonesian Drinks”</em>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-sm font-bold">
+          <a href="https://www.exodrinks.id" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300 transition">
+            🌐 www.exodrinks.id
+          </a>
+          <span class="text-amber-300">📱 @exodrinks_bali</span>
+          <a href="https://wa.me/6281266910111" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-400 text-white px-5 py-2.5 rounded-full font-extrabold shadow-md transition">
+            WhatsApp: +62 812-6691-0111
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-purple-300/80">
+        <p>&copy; <span id="year-copy"></span> Exodrinks In Bali.</p>
+        <button onclick="togglePreviewModal(true)" class="bg-white/10 hover:bg-white/20 text-amber-300 font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          📸 Unggah Foto, Edit Nama & Export GitHub/Vercel
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 8. PANEL KELOLA SEMUA FOTO ASLI, EDIT NAMA & EXPORT GITHUB / VERCEL -->
+  <div id="preview-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-baliPurple-950/75 backdrop-blur-xs">
+    <div class="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl border-2 border-baliPurple-200 relative max-h-[92vh] overflow-y-auto">
+      <button onclick="togglePreviewModal(false)" aria-label="Tutup Panel" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-baliPurple-100 hover:bg-baliPurple-200 text-baliPurple-950 font-bold cursor-pointer">
+        ✕
+      </button>
+
+      <div class="flex flex-wrap items-center gap-2 mb-2">
+        <span class="inline-block bg-baliPurple-100 text-baliPurple-800 text-xs font-extrabold uppercase px-3.5 py-1 rounded-full">
+          Unggah Foto & Edit Nama (9 Slot)
+        </span>
+        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">
+          Tersimpan Otomatis di Browser
+        </span>
+      </div>
+      <h3 class="text-2xl font-extrabold text-baliPurple-950">
+        Unggah Foto, Edit Nama & Export ke GitHub / Vercel
+      </h3>
+      <p class="text-xs sm:text-sm text-baliPurple-950/75 mt-1">
+        Klik <strong>Unggah & Edit Nama</strong> pada slot mana pun untuk mengunggah foto baru sekaligus mengubah nama slot/label atau nama file GitHub-nya.
+      </p>
+
+      <div id="photo-manager-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"></div>
+
+      <div class="mt-6 p-4 rounded-2xl bg-baliPurple-50 border border-baliPurple-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div>
+          <p class="text-sm font-extrabold text-baliPurple-950">📰 Artikel Berita & Galeri Foto (<span id="news-count-modal">0</span> Artikel)</p>
+          <p class="text-xs text-baliPurple-950/70">Semua berita beserta foto utama dan foto galeri ikut tersimpan otomatis saat Anda klik <strong>Download index.html Lengkap</strong>.</p>
+        </div>
+        <button onclick="togglePreviewModal(false); openNewsEditorModal();" class="bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold px-4 py-2.5 rounded-full text-xs shrink-0 transition cursor-pointer">
+          + Tambah Berita Baru
+        </button>
+      </div>
+
+      <div class="mt-6 p-5 rounded-2xl bg-baliPurple-950 text-purple-100 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-extrabold text-amber-300">Export Website atau Salin Kode APP_DATA (images & news) untuk GitHub:</span>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="copySnippetToClipboard()" class="bg-white/15 hover:bg-white/25 text-white text-xs font-extrabold px-3.5 py-2 rounded-full transition cursor-pointer">
+              📋 Salin Format GitHub (images & news)
+            </button>
+            <button onclick="downloadHtmlWithEmbeddedPhotos()" class="bg-amber-400 hover:bg-amber-300 text-baliPurple-950 text-xs font-extrabold px-4 py-2 rounded-full shadow transition cursor-pointer">
+              ⬇️ Download index.html Lengkap (Dengan Foto & Berita Tertanam)
+            </button>
+          </div>
+        </div>
+        <textarea id="github-snippet-box" readonly rows="10" class="w-full bg-black/40 text-amber-200 font-mono text-xs p-3 rounded-xl border border-white/10 focus:outline-none"></textarea>
+        <p id="copy-feedback" class="hidden text-xs font-bold text-emerald-400">✓ Berhasil! Silakan upload file index.html ke repositori GitHub Anda untuk auto-deploy ke Vercel.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8A. MODAL UNGGAH FOTO & EDIT NAMA SLOT -->
+  <div id="slot-edit-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-baliPurple-950/75 backdrop-blur-xs">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border-2 border-baliPurple-200 relative max-h-[92vh] overflow-y-auto">
+      <button onclick="closeSlotEditModal()" aria-label="Tutup Modal Unggah & Edit Nama" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-baliPurple-100 hover:bg-baliPurple-200 text-baliPurple-950 font-bold cursor-pointer">
+        ✕
+      </button>
+
+      <span class="inline-block bg-baliPurple-100 text-baliPurple-800 text-xs font-extrabold uppercase px-3.5 py-1 rounded-full">
+        Unggah Foto & Edit Nama
+      </span>
+      <h3 class="text-xl sm:text-2xl font-extrabold text-baliPurple-950 mt-2">
+        Atur Foto & Nama Slot
+      </h3>
+      <p class="text-xs text-baliPurple-950/70 mt-1">
+        Anda dapat mengganti nama tampilan / nama varian, mengunggah file foto baru, maupun mengubah nama path file GitHub-nya.
+      </p>
+
+      <form id="slot-edit-form" onsubmit="saveSlotEditModal(event)" class="mt-4 space-y-4">
+        <input type="hidden" id="slot-edit-key" value="" />
+
+        <div>
+          <label for="slot-edit-label" class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">
+            Nama Tampilan / Nama Varian *
+          </label>
+          <input type="text" id="slot-edit-label" required placeholder="Contoh: ES TELER ORI KECIL" class="w-full px-4 py-2.5 rounded-xl border-2 border-baliPurple-200 text-sm font-bold text-baliPurple-950 focus:outline-none focus:border-baliPurple-700" />
+        </div>
+
+        <div>
+          <label for="slot-edit-path" class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">
+            Nama / Path File Foto (GitHub)
+          </label>
+          <input type="text" id="slot-edit-path" placeholder="./images/es-teler-ori-kecil.png" class="w-full px-4 py-2.5 rounded-xl border-2 border-baliPurple-200 text-xs font-mono text-baliPurple-950 focus:outline-none focus:border-baliPurple-700" />
+        </div>
+
+        <div class="p-4 rounded-2xl bg-baliPurple-50 border-2 border-dashed border-baliPurple-300 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-extrabold text-baliPurple-950">File Foto Asli</span>
+            <label class="bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold px-4 py-2 rounded-full text-xs cursor-pointer transition">
+              📤 Unggah Foto dari Perangkat
+              <input type="file" id="slot-modal-file-input" accept="image/*" class="hidden" onchange="handleSlotModalFileUpload(event)" />
+            </label>
+          </div>
+
+          <div id="slot-modal-preview-wrap" class="w-full h-44 rounded-xl bg-white border border-baliPurple-200 flex items-center justify-center overflow-hidden p-2">
+            <img id="slot-modal-preview-img" src="" alt="Preview Foto Slot" class="hidden w-full h-full object-contain rounded-lg" />
+            <span id="slot-modal-empty-text" class="text-xs font-bold text-baliPurple-950/50">Belum ada foto terpilih</span>
+          </div>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between gap-2">
+          <button type="button" onclick="clearSlotPhotoInModal()" class="px-4 py-2.5 rounded-full text-xs font-bold bg-red-50 hover:bg-red-100 text-red-700 transition cursor-pointer">
+            Hapus Foto
+          </button>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="closeSlotEditModal()" class="px-4 py-2.5 rounded-full text-xs font-bold bg-baliPurple-100 text-baliPurple-900 hover:bg-baliPurple-200 transition cursor-pointer">
+              Batal
+            </button>
+            <button type="submit" class="px-5 py-2.5 rounded-full text-xs font-extrabold bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 shadow-md transition cursor-pointer">
+              💾 Simpan Foto & Nama
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 8B. MODAL FORM TAMBAH / EDIT BERITA & MULTI-FOTO GALERI -->
+  <div id="news-editor-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-baliPurple-950/75 backdrop-blur-xs">
+    <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border-2 border-baliPurple-200 relative max-h-[92vh] overflow-y-auto">
+      <button onclick="closeNewsEditorModal()" aria-label="Tutup Form Berita" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-baliPurple-100 hover:bg-baliPurple-200 text-baliPurple-950 font-bold cursor-pointer">
+        ✕
+      </button>
+
+      <span class="inline-block bg-baliPurple-100 text-baliPurple-800 text-xs font-extrabold uppercase px-3.5 py-1 rounded-full">
+        Format Berita & Dokumentasi Foto
+      </span>
+      <h3 id="news-editor-title" class="text-2xl font-extrabold text-baliPurple-950 mt-2">
+        + Tambah Berita & Foto Dokumentasi
+      </h3>
+      <p class="text-xs text-baliPurple-950/70 mt-1">
+        Isi atau edit judul berita, lokasi cabang, isi berita, foto sampul utama, serta tambahkan beberapa foto dokumentasi kegiatan sekaligus.
+      </p>
+
+      <form id="news-editor-form" onsubmit="saveNewsArticle(event)" class="mt-5 space-y-4">
+        <input type="hidden" id="news-edit-id" value="" />
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">Judul / Nama Berita *</label>
+            <input type="text" id="news-input-title" required placeholder="Contoh: Grand Opening Outlet Baru Exodrinks Bali" class="w-full px-4 py-2.5 rounded-xl border-2 border-baliPurple-200 text-sm font-semibold focus:outline-none focus:border-baliPurple-700" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">Kategori *</label>
+              <select id="news-input-category" class="w-full px-3 py-2.5 rounded-xl border-2 border-baliPurple-200 text-sm font-semibold bg-white focus:outline-none focus:border-baliPurple-700">
+                <option value="Grand Opening">Grand Opening</option>
+                <option value="Event & Big Order">Event & Big Order</option>
+                <option value="Promo Sultan">Promo Sultan</option>
+                <option value="Liputan Outlet">Liputan Outlet</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">Tanggal *</label>
+              <input type="date" id="news-input-date" required class="w-full px-3 py-2.5 rounded-xl border-2 border-baliPurple-200 text-sm font-semibold focus:outline-none focus:border-baliPurple-700" />
+            </div>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">Lokasi / Cabang Terkait</label>
+            <input type="text" id="news-input-branch" placeholder="Contoh: Cabang Sesetan & Pemogan, Denpasar" class="w-full px-4 py-2.5 rounded-xl border-2 border-baliPurple-200 text-sm font-semibold focus:outline-none focus:border-baliPurple-700" />
+          </div>
+          <div>
+            <label class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">Nama / Path File GitHub (Opsional)</label>
+            <input type="text" id="news-input-github-path" placeholder="./images/berita-1.jpg" class="w-full px-4 py-2.5 rounded-xl border-2 border-baliPurple-200 text-sm font-mono focus:outline-none focus:border-baliPurple-700" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-extrabold text-baliPurple-950 uppercase mb-1">Isi Lengkap Berita *</label>
+          <textarea id="news-input-content" required rows="4" placeholder="Tuliskan cerita lengkap kegiatan, antusiasme pelanggan, detail pesanan acara, atau informasi cabang baru..." class="w-full px-4 py-3 rounded-xl border-2 border-baliPurple-200 text-sm leading-relaxed focus:outline-none focus:border-baliPurple-700"></textarea>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-baliPurple-50 border-2 border-dashed border-baliPurple-300">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p class="text-xs font-extrabold text-baliPurple-950 uppercase">1. Foto Utama Berita (Cover)</p>
+              <p class="text-[11px] text-baliPurple-950/65">Foto sampul yang muncul di kartu depan berita.</p>
+            </div>
+            <label class="bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold px-4 py-2 rounded-full text-xs cursor-pointer transition">
+              + Unggah Foto Utama Asli
+              <input type="file" id="news-cover-file" accept="image/*" class="hidden" onchange="handleNewsCoverUpload(event)" />
+            </label>
+          </div>
+          <div id="news-cover-preview-box" class="hidden mt-3 relative">
+            <img id="news-cover-preview-img" src="" alt="Preview Foto Utama Berita" class="w-full max-h-56 object-contain rounded-xl bg-white p-2 border border-baliPurple-200" />
+            <button type="button" onclick="clearNewsCoverDraft()" class="mt-2 text-xs font-bold text-red-600 hover:underline cursor-pointer">Hapus Foto Utama</button>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-baliPurple-50 border-2 border-dashed border-baliPurple-300">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p class="text-xs font-extrabold text-baliPurple-950 uppercase">2. Galeri Foto Dokumentasi Tambahan (Bisa Pilih Banyak Foto)</p>
+              <p class="text-[11px] text-baliPurple-950/65">Anda dapat memilih beberapa foto kegiatan sekaligus untuk ditampilkan di dalam berita.</p>
+            </div>
+            <label class="bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold px-4 py-2 rounded-full text-xs cursor-pointer transition">
+              + Unggah Foto Galeri (Multi-Foto)
+              <input type="file" id="news-gallery-files" accept="image/*" multiple class="hidden" onchange="handleNewsGalleryUpload(event)" />
+            </label>
+          </div>
+          <div id="news-gallery-preview-grid" class="grid grid-cols-3 sm:grid-cols-4 gap-2.5 mt-3"></div>
+        </div>
+
+        <p id="news-form-error" class="hidden text-xs font-bold text-red-600 bg-red-50 px-3 py-2 rounded-xl"></p>
+
+        <div class="pt-2 flex items-center justify-end gap-3">
+          <button type="button" onclick="closeNewsEditorModal()" class="px-5 py-2.5 rounded-full text-xs font-bold bg-baliPurple-100 text-baliPurple-900 hover:bg-baliPurple-200 transition cursor-pointer">
+            Batal
+          </button>
+          <button type="submit" class="px-6 py-3 rounded-full text-xs sm:text-sm font-extrabold bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 shadow-lg transition cursor-pointer">
+            💾 Simpan & Publikasikan Berita
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 8C. MODAL BACA BERITA LENGKAP & GALERI FOTO DOKUMENTASI -->
+  <div id="news-reader-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-baliPurple-950/80 backdrop-blur-xs">
+    <div class="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-9 shadow-2xl border-2 border-baliPurple-200 relative max-h-[92vh] overflow-y-auto">
+      <button onclick="closeNewsReaderModal()" aria-label="Tutup Berita" class="sticky top-0 float-right z-10 w-10 h-10 rounded-full bg-baliPurple-900 text-amber-300 font-bold shadow-lg hover:bg-baliPurple-800 cursor-pointer">
+        ✕
+      </button>
+      <div id="news-reader-content"></div>
+    </div>
+  </div>
+
+  <!-- 9. DRAWER KERANJANG PESANAN WHATSAPP INTERAKTIF -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleCart(false)" class="absolute inset-0 bg-baliPurple-950/65 backdrop-blur-xs"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-baliPurple-100">
+          <div>
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-baliPurple-700">Exodrinks In Bali</span>
+            <h3 class="text-xl font-extrabold text-baliPurple-950">🛒 Keranjang Pesanan</h3>
+          </div>
+          <button onclick="toggleCart(false)" aria-label="Tutup Keranjang" class="w-9 h-9 rounded-full bg-baliPurple-100 text-baliPurple-950 font-bold hover:bg-baliPurple-200 cursor-pointer">
+            ✕
+          </button>
+        </div>
+
+        <div class="mt-4">
+          <label for="selected-outlet" class="block text-xs font-extrabold uppercase tracking-wider text-baliPurple-800 mb-1.5">
+            1. Pilih Cabang Exodrinks Bali:
+          </label>
+          <select id="selected-outlet" class="w-full px-3.5 py-3 rounded-2xl border-2 border-baliPurple-200 bg-baliPurple-50 text-sm font-bold text-baliPurple-950 focus:outline-none focus:border-baliPurple-700"></select>
+        </div>
+
+        <div class="mt-5">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-baliPurple-800">2. Daftar Es Teler Dipilih:</span>
+            <button onclick="clearCart()" class="text-xs font-bold text-red-600 hover:underline cursor-pointer">Kosongkan</button>
+          </div>
+          <div id="cart-items" class="space-y-3"></div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-baliPurple-100 mt-6 space-y-3">
+        <div id="promo-status" class="space-y-1.5"></div>
+        <div class="flex items-center justify-between text-base font-extrabold text-baliPurple-950 pt-1">
+          <span>Estimasi Total:</span>
+          <span id="cart-total" class="text-2xl font-black text-red-600">Rp 0</span>
+        </div>
+        <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 rounded-2xl shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
+          <span>Kirim Pesanan ke WhatsApp</span>
+        </button>
+        <p id="cart-empty-warning" class="hidden text-center text-xs font-bold text-red-600 bg-red-50 py-2 rounded-xl">
+          Silakan pilih minimal 1 cup Es Teler Sultan terlebih dahulu.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. KONFIGURASI TERPUSAT APP_DATA -->
+  <script>
+    const STORAGE_KEY = "exodrinks_bali_original_photos_v1";
+    const SLOT_NAMES_STORAGE_KEY = "exodrinks_bali_slot_names_v1";
+    const NEWS_STORAGE_KEY = "exodrinks_bali_news_v1";
+
+    const PHOTO_SLOTS_META = [
+      { key: "logoBrand", label: "Logo Brand Exodrinks", defaultPath: "./images/logo-exodrinks.png", productId: null },
+      { key: "puraBg", label: "Background Pura Bali", defaultPath: "./images/pura-bali.png", productId: null },
+      { key: "heroMascot", label: "Exodrinks Bali Edition", defaultPath: "./images/hero-bali.png", productId: null },
+      { key: "oriKecilPhoto", label: "ES TELER ORI KECIL", defaultPath: "./images/es-teler-ori-kecil.png", productId: "ori-kecil" },
+      { key: "oriBesarPhoto", label: "ES TELER ORI BESAR", defaultPath: "./images/es-teler-ori-besar.png", productId: "ori-besar" },
+      { key: "durianKecilPhoto", label: "ES TELER DURIAN KECIL", defaultPath: "./images/es-teler-durian-kecil.png", productId: "durian-kecil" },
+      { key: "durianBesarPhoto", label: "ES TELER DURIAN BESAR", defaultPath: "./images/es-teler-durian-besar.png", productId: "durian-besar" },
+      { key: "promoBanner", label: "Foto Banner Promo Sultan", defaultPath: "./images/promo-sultan.png", productId: null },
+      { key: "outletShowcase", label: "Suasana Booth & Outlet Exodrinks Bali", defaultPath: "./images/outlet-bali.png", productId: null }
+    ];
+
+    const APP_DATA = {
+      whatsappNumber: "6281266910111",
+      images: {
+        logoBrand: "./images/logo-exodrinks.png",
+        puraBg: "./images/pura-bali.png",
+        heroMascot: "",
+        oriKecilPhoto: "",
+        oriBesarPhoto: "",
+        durianKecilPhoto: "",
+        durianBesarPhoto: "",
+        promoBanner: "",
+        outletShowcase: ""
+      },
+      news: [
+        {
+          id: "berita-opening-bali",
+          title: "Antusiasme Pelanggan Es Teler Sultan Cabang Bandung di 20 Titik Bali",
+          category: "Liputan Outlet",
+          date: "2026-11-20",
+          branch: "Seluruh Cabang Denpasar & Badung, Bali",
+          coverImage: "",
+          githubCoverPath: "./images/berita-opening-bali.jpg",
+          galleryImages: [],
+          content: "Kehadiran Exodrinks In Bali – Es Teler Sultan Cabang Bandung disambut hangat oleh masyarakat Denpasar, Kuta, hingga Kuta Utara. Racikan autentik kuah krimer gurih berpadu dengan potongan alpukat mentega, nangka manis, cincau, kelapa muda, sagu mutiara, serta varian toping daging durian asli yang difillet menjadi favorit baru pelepas dahaga di Pulau Dewata."
+        },
+        {
+          id: "berita-big-order-event",
+          title: "Layanan Big Order Acara Kantor & Komunitas: Gratis Ongkir & Bonus Cup",
+          category: "Event & Big Order",
+          date: "2026-11-25",
+          branch: "Cabang Waturenggong, Sesetan & Dalung",
+          coverImage: "",
+          githubCoverPath: "./images/berita-event-bali.jpg",
+          galleryImages: [],
+          content: "Exodrinks Bali melayani pemesanan jumlah besar (Big Order) untuk kebutuhan rapat kantor, arisan, acara kampus, hingga syukuran komunitas. Setiap pemesanan minimal 30 cup langsung mendapatkan fasilitas *FREE ONGKIR, dan setiap pembelian kelipatan 40 cup mendapatkan bonus *FREE 1 CUP segar siap santap."
+        }
+      ],
+      products: [
+        {
+          id: "ori-kecil",
+          name: "ES TELER ORI KECIL",
+          category: "ES TELER ORI",
+          size: "Ukuran Kecil",
+          price: 10000,
+          badge: "Best Seller",
+          imageKey: "oriKecilPhoto",
+          recommendedPath: "./images/es-teler-ori-kecil.png",
+          composition: "Krimer, Sagu Mutiara, Cincau, Kelapa, Nangka, Alpukat, Susu Kental Manis, Es Batu",
+          note: ""
+        },
+        {
+          id: "ori-besar",
+          name: "ES TELER ORI BESAR",
+          category: "ES TELER ORI",
+          size: "Ukuran Besar",
+          price: 15000,
+          badge: "Porsi Puas",
+          imageKey: "oriBesarPhoto",
+          recommendedPath: "./images/es-teler-ori-besar.png",
+          composition: "Krimer, Sagu Mutiara, Cincau, Kelapa, Nangka, Alpukat, Susu Kental Manis, Es Batu",
+          note: ""
+        },
+        {
+          id: "durian-kecil",
+          name: "ES TELER DURIAN KECIL",
+          category: "ES TELER DURIAN",
+          size: "Ukuran Kecil",
+          price: 15000,
+          badge: "Durian Asli",
+          imageKey: "durianKecilPhoto",
+          recommendedPath: "./images/es-teler-durian-kecil.png",
+          composition: "Krimer, Sagu Mutiara, Cincau, Kelapa, Nangka, Alpukat, Susu Kental Manis, Es Batu",
+          note: "*menggunakan toping daging Durian ASLI yang difillet dan dibekukan"
+        },
+        {
+          id: "durian-besar",
+          name: "ES TELER DURIAN BESAR",
+          category: "ES TELER DURIAN",
+          size: "Ukuran Besar",
+          price: 20000,
+          badge: "Sultan Favorit",
+          imageKey: "durianBesarPhoto",
+          recommendedPath: "./images/es-teler-durian-besar.png",
+          composition: "Krimer, Sagu Mutiara, Cincau, Kelapa, Nangka, Alpukat, Susu Kental Manis, Es Batu",
+          note: "*menggunakan toping daging Durian ASLI yang difillet dan dibekukan"
+        }
+      ],
+      outlets: [
+        { name: "Waturenggong", region: "Denpasar Selatan", address: "Jl. Waturenggong No. 129, Dauh Puri Klod, Denpasar Selatan, Kota Denpasar, Bali 80225" },
+        { name: "Pemogan", region: "Denpasar Selatan", address: "Jl. Raya Pemogan No. 239, Pemogan, Denpasar Selatan, Kota Denpasar, Bali 80361" },
+        { name: "Sesetan", region: "Denpasar Selatan", address: "Jl. Raya Sesetan No. 529, Sesetan, Denpasar Selatan, Kota Denpasar, Bali 80223" },
+        { name: "Tegalwangi", region: "Denpasar Selatan", address: "Jl. Tegalwangi No. 103, Sesetan, Denpasar Selatan, Kota Denpasar, Bali 80361" },
+        { name: "Glogor Carik", region: "Denpasar Selatan", address: "Jl. Glogor Carik 68, Pemogan, Denpasar Selatan, Kota Denpasar, Bali 80221" },
+        { name: "Pulau Moyo", region: "Denpasar Selatan", address: "Jl. Pulau Moyo No. 32E, Pedungan, Denpasar Selatan, Kota Denpasar, Bali 80223" },
+        { name: "Prima Medika", region: "Denpasar Barat", address: "Jl. Raya Sesetan No. 17b, Dauh Puri Klod, Kec. Denpasar Barat, Kota Denpasar, Bali 80223" },
+        { name: "Gunung Rinjani", region: "Denpasar Barat", address: "Jl. Gunung Rinjani No. 71, Tegal Harum, Kec. Denpasar Barat, Kota Denpasar, Bali 80119" },
+        { name: "Nusa Kambangan", region: "Denpasar Barat", address: "Jl. Pulau Biak No. 02, Dauh Puri Kauh, Kec. Denpasar Barat, Kota Denpasar, Bali 80113" },
+        { name: "Gunung Agung", region: "Denpasar Barat", address: "Jl. Gn. Agung No. 45, Pemecutan, Kec. Denpasar Barat, Kota Denpasar, Bali 80111" },
+        { name: "Tangkuban Perahu", region: "Denpasar Barat", address: "Jl. Gn. Tangkuban Perahu No. 109, Padangsambian Klod, Kec. Denpasar Barat, Kota Denpasar, Bali 80117" },
+        { name: "Imam Bonjol", region: "Denpasar Barat", address: "Jl. Imam Bonjol No. 401, Pemecutan Klod, Kec. Denpasar Barat, Kota Denpasar, Bali 80119" },
+        { name: "Arjuna", region: "Denpasar Utara", address: "Jl. Arjuna No. 35, Dauh Puri Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80111" },
+        { name: "Ahmad Yani", region: "Denpasar Utara", address: "Jl. Ahmad Yani Utara No. 215, Peguyangan, Kec. Denpasar Utara, Kota Denpasar, Bali 80115" },
+        { name: "Antasura", region: "Denpasar Utara", address: "Jl. Antasura No. 34, Peguyangan, Kec. Denpasar Utara, Kota Denpasar, Bali 80237" },
+        { name: "Turi", region: "Denpasar Timur", address: "Jl. Turi No. 10, Kesiman, Kec. Denpasar Timur, Kota Denpasar, Bali 80235" },
+        { name: "Gatsu Timur", region: "Denpasar Timur", address: "Jl. Gatot Subroto Tim. No. 234, Tonja, Kec. Denpasar Timur, Kota Denpasar, Bali 80234" },
+        { name: "Kubu Anyar", region: "Kec. Kuta", address: "Jl. Banjar Anyar No. 29e, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361" },
+        { name: "Dalung", region: "Kuta Utara", address: "Depan Pertamina, Jl. Perum Dalung Permai, Dalung, Kec. Kuta Utara, Kabupaten Badung, Bali 80361" },
+        { name: "Kerobokan", region: "Kuta Utara", address: "Jl. Raya Kerobokan No. 31, Kerobokan Kaja, Kec. Kuta Utara, Kabupaten Badung, Bali 80361" }
+      ]
+    };
+
+    let cart = {};
+    let activeMenuFilter = "all";
+    let activeRegion = "Semua";
+    let activeNewsCategory = "Semua";
+    let activeTargetPhotoKey = null;
+    let useMultiplyMode = false;
+    let draftNewsCover = "";
+    let draftNewsGallery = [];
+    let draftSlotPhotoDataUrl = "";
+
+    const slotLabelsState = {
+      logoBrand: "Logo Brand Exodrinks",
+      puraBg: "Background Pura Bali",
+      heroMascot: "Exodrinks Bali Edition",
+      oriKecilPhoto: "ES TELER ORI KECIL",
+      oriBesarPhoto: "ES TELER ORI BESAR",
+      durianKecilPhoto: "ES TELER DURIAN KECIL",
+      durianBesarPhoto: "ES TELER DURIAN BESAR",
+      promoBanner: "Foto Banner Promo Sultan",
+      outletShowcase: "Suasana Booth & Outlet Exodrinks Bali"
+    };
+
+    const githubPathsState = {
+      logoBrand: "./images/logo-exodrinks.png",
+      puraBg: "./images/pura-bali.png",
+      heroMascot: "./images/hero-bali.png",
+      oriKecilPhoto: "./images/es-teler-ori-kecil.png",
+      oriBesarPhoto: "./images/es-teler-ori-besar.png",
+      durianKecilPhoto: "./images/es-teler-durian-kecil.png",
+      durianBesarPhoto: "./images/es-teler-durian-besar.png",
+      promoBanner: "./images/promo-sultan.png",
+      outletShowcase: "./images/outlet-bali.png"
+    };
+
+    function renderDefaultLogoMarkup(sizeClass = "h-10") {
+      return `<img src="./images/logo-exodrinks.png" data-fallback="image_337a81.png" onerror="if(!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback;}" alt="EXO drinks Logo" class="${sizeClass} w-auto object-contain logo-blend-dark" />`;
+    }
+
+    function loadSavedOriginalPhotos() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === "object") {
+            Object.keys(APP_DATA.images).forEach(k => {
+              if (typeof parsed[k] === "string") {
+                APP_DATA.images[k] = parsed[k];
+              }
+            });
+          }
+        }
+      } catch (e) {}
+
+      try {
+        const rawMeta = localStorage.getItem(SLOT_NAMES_STORAGE_KEY);
+        if (rawMeta) {
+          const parsedMeta = JSON.parse(rawMeta);
+          if (parsedMeta && typeof parsedMeta === "object") {
+            if (parsedMeta.labels && typeof parsedMeta.labels === "object") {
+              Object.assign(slotLabelsState, parsedMeta.labels);
+            }
+            if (parsedMeta.paths && typeof parsedMeta.paths === "object") {
+              Object.assign(githubPathsState, parsedMeta.paths);
+            }
+          }
+        }
+      } catch (e) {}
+
+      syncSlotNamesToProducts();
+    }
+
+    function saveSlotNamesToStorage() {
+      try {
+        localStorage.setItem(SLOT_NAMES_STORAGE_KEY, JSON.stringify({
+          labels: slotLabelsState,
+          paths: githubPathsState
+        }));
+      } catch (e) {}
+    }
+
+    function syncSlotNamesToProducts() {
+      PHOTO_SLOTS_META.forEach(meta => {
+        if (meta.productId && slotLabelsState[meta.key]) {
+          const prod = APP_DATA.products.find(p => p.id === meta.productId);
+          if (prod) prod.name = slotLabelsState[meta.key];
+        }
+      });
+    }
+
+    function openSlotNameAndUploadModal(slotKey) {
+      const meta = PHOTO_SLOTS_META.find(m => m.key === slotKey);
+      if (!meta) return;
+
+      document.getElementById("slot-edit-key").value = slotKey;
+      document.getElementById("slot-edit-label").value = slotLabelsState[slotKey] || meta.label;
+      document.getElementById("slot-edit-path").value = githubPathsState[slotKey] || meta.defaultPath;
+      draftSlotPhotoDataUrl = APP_DATA.images[slotKey] || "";
+
+      renderSlotModalPreview();
+      const modal = document.getElementById("slot-edit-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeSlotEditModal() {
+      const modal = document.getElementById("slot-edit-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function handleSlotModalFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        draftSlotPhotoDataUrl = e.target.result;
+        document.getElementById("slot-edit-path").value = `./images/${file.name}`;
+        renderSlotModalPreview();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearSlotPhotoInModal() {
+      draftSlotPhotoDataUrl = "";
+      renderSlotModalPreview();
+    }
+
+    function renderSlotModalPreview() {
+      const img = document.getElementById("slot-modal-preview-img");
+      const emptyText = document.getElementById("slot-modal-empty-text");
+      if (draftSlotPhotoDataUrl) {
+        img.src = draftSlotPhotoDataUrl;
+        img.classList.remove("hidden");
+        emptyText.classList.add("hidden");
+      } else {
+        img.src = "";
+        img.classList.add("hidden");
+        emptyText.classList.remove("hidden");
+      }
+    }
+
+    function saveSlotEditModal(event) {
+      event.preventDefault();
+      const slotKey = document.getElementById("slot-edit-key").value;
+      const newLabel = document.getElementById("slot-edit-label").value.trim();
+      const newPath = document.getElementById("slot-edit-path").value.trim();
+      const meta = PHOTO_SLOTS_META.find(m => m.key === slotKey);
+      if (!slotKey || !meta) return;
+
+      slotLabelsState[slotKey] = newLabel || meta.label;
+      if (newPath) {
+        githubPathsState[slotKey] = newPath;
+      }
+
+      if (draftSlotPhotoDataUrl) {
+        APP_DATA.images[slotKey] = draftSlotPhotoDataUrl;
+      } else {
+        APP_DATA.images[slotKey] = slotKey === "logoBrand" ? (newPath || "./images/logo-exodrinks.png") : "";
+      }
+
+      syncSlotNamesToProducts();
+      saveSlotNamesToStorage();
+      saveOriginalPhotosToStorage();
+      refreshAllVisualSlots();
+      updateCartUI();
+      closeSlotEditModal();
+    }
+
+    function loadSavedNews() {
+      try {
+        const raw = localStorage.getItem(NEWS_STORAGE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          APP_DATA.news = parsed;
+        }
+      } catch (e) {}
+    }
+
+    function saveNewsToStorage() {
+      try {
+        localStorage.setItem(NEWS_STORAGE_KEY, JSON.stringify(APP_DATA.news));
+      } catch (e) {}
+    }
+
+    function formatIndonesianDate(isoDate) {
+      if (!isoDate) return "";
+      const parts = isoDate.split("-");
+      if (parts.length !== 3) return isoDate;
+      const months = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+      const mIdx = parseInt(parts[1], 10) - 1;
+      return `${parseInt(parts[2], 10)} ${months[mIdx] || parts[1]} ${parts[0]}`;
+    }
+
+    function renderNewsCategoryFilters() {
+      const container = document.getElementById("news-category-filters");
+      if (!container) return;
+      const categories = ["Semua", ...new Set(APP_DATA.news.map(n => n.category))];
+      container.innerHTML = categories.map(cat => {
+        const isActive = cat === activeNewsCategory;
+        const count = cat === "Semua"
+          ? APP_DATA.news.length
+          : APP_DATA.news.filter(n => n.category === cat).length;
+        return `
+          <button onclick="setNewsCategory('${cat}')" class="px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer ${
+            isActive
+              ? "bg-baliPurple-900 text-amber-300 shadow-md"
+              : "bg-baliPurple-50 text-baliPurple-900 border border-baliPurple-200 hover:bg-baliPurple-100"
+          }">
+            ${cat} (${count})
+          </button>
+        `;
+      }).join("");
+    }
+
+    function setNewsCategory(cat) {
+      activeNewsCategory = cat;
+      renderNewsCategoryFilters();
+      renderNewsGrid();
+    }
+
+    function renderNewsGrid() {
+      const grid = document.getElementById("news-grid");
+      const modalCount = document.getElementById("news-count-modal");
+      if (modalCount) modalCount.textContent = APP_DATA.news.length;
+      if (!grid) return;
+
+      const filtered = activeNewsCategory === "Semua"
+        ? APP_DATA.news
+        : APP_DATA.news.filter(n => n.category === activeNewsCategory);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 rounded-3xl bg-baliPurple-50 border-2 border-dashed border-baliPurple-200">
+            <p class="font-extrabold text-baliPurple-950">Belum ada berita pada kategori ini</p>
+            <button onclick="openNewsEditorModal()" class="mt-3 bg-baliPurple-900 text-amber-300 font-extrabold px-5 py-2.5 rounded-full text-xs cursor-pointer">
+              + Tambah Berita & Foto Baru
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const totalPhotos = (item.coverImage ? 1 : 0) + (Array.isArray(item.galleryImages) ? item.galleryImages.length : 0);
+        return `
+          <article class="bg-baliPurple-50/70 rounded-3xl border-2 border-baliPurple-200 hover:border-baliPurple-600 shadow-editorial overflow-hidden flex flex-col justify-between transition">
+            <div>
+              <div class="relative aspect-16/10 bg-baliPurple-100 border-b border-baliPurple-200 overflow-hidden group">
+                ${item.coverImage
+                  ? `<img src="${item.coverImage}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />`
+                  : `<div onclick="openNewsEditorModal('${item.id}')" class="w-full h-full flex flex-col items-center justify-center p-5 text-center cursor-pointer hover:bg-baliPurple-200/60 transition">
+                      <span class="text-3xl mb-1.5">📸</span>
+                      <p class="text-xs font-extrabold text-baliPurple-950">+ Unggah Foto Utama Berita</p>
+                      <p class="text-[10px] font-mono text-baliPurple-700 mt-0.5">${item.githubCoverPath || "./images/berita.jpg"}</p>
+                    </div>`
+                }
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  <span class="bg-baliPurple-950/90 text-amber-300 text-[11px] font-extrabold px-3 py-1 rounded-full shadow">
+                    ${item.category}
+                  </span>
+                  ${totalPhotos > 0 ? `<span class="bg-white/95 text-baliPurple-950 text-[11px] font-extrabold px-2.5 py-1 rounded-full shadow">🖼️ ${totalPhotos} Foto</span>` : ""}
+                </div>
+              </div>
+
+              <div class="p-6">
+                <div class="flex flex-wrap items-center gap-2 text-[11px] font-bold text-baliPurple-700">
+                  <span>📅 ${formatIndonesianDate(item.date)}</span>
+                  ${item.branch ? `<span>•</span><span>📍 ${item.branch}</span>` : ""}
+                </div>
+                <h3 class="mt-2 text-lg sm:text-xl font-extrabold text-baliPurple-950 leading-snug line-clamp-2">
+                  ${item.title}
+                </h3>
+                <p class="mt-2.5 text-xs sm:text-sm text-baliPurple-950/75 leading-relaxed line-clamp-3">
+                  ${item.content}
+                </p>
+
+                ${Array.isArray(item.galleryImages) && item.galleryImages.length > 0 ? `
+                  <div class="mt-4 flex items-center gap-2 overflow-x-auto pb-1">
+                    ${item.galleryImages.slice(0, 4).map(gSrc => `
+                      <img src="${gSrc}" alt="Dokumentasi" class="w-12 h-12 rounded-xl object-cover border border-baliPurple-200 shrink-0" />
+                    `).join("")}
+                    ${item.galleryImages.length > 4 ? `<span class="text-xs font-extrabold text-baliPurple-800">+${item.galleryImages.length - 4}</span>` : ""}
+                  </div>
+                ` : ""}
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 flex items-center gap-2">
+              <button onclick="openNewsReaderModal('${item.id}')" class="flex-1 bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold py-2.5 px-4 rounded-xl text-xs transition cursor-pointer">
+                Baca & Lihat Foto
+              </button>
+              <button onclick="openNewsEditorModal('${item.id}')" class="bg-white hover:bg-baliPurple-100 text-baliPurple-950 border border-baliPurple-200 font-bold py-2.5 px-3.5 rounded-xl text-xs transition cursor-pointer">
+                ✏️ Edit Nama / + Foto
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function openNewsEditorModal(editId = "") {
+      const modal = document.getElementById("news-editor-modal");
+      const titleHeader = document.getElementById("news-editor-title");
+      const errBox = document.getElementById("news-form-error");
+      errBox.classList.add("hidden");
+
+      if (editId) {
+        const existing = APP_DATA.news.find(n => n.id === editId);
+        if (existing) {
+          titleHeader.textContent = "✏️ Edit Nama / Judul Berita & Foto Dokumentasi";
+          document.getElementById("news-edit-id").value = existing.id;
+          document.getElementById("news-input-title").value = existing.title;
+          document.getElementById("news-input-category").value = existing.category;
+          document.getElementById("news-input-date").value = existing.date;
+          document.getElementById("news-input-branch").value = existing.branch || "";
+          document.getElementById("news-input-github-path").value = existing.githubCoverPath || "./images/berita-baru.jpg";
+          document.getElementById("news-input-content").value = existing.content;
+          draftNewsCover = existing.coverImage || "";
+          draftNewsGallery = Array.isArray(existing.galleryImages) ? [...existing.galleryImages] : [];
+        }
+      } else {
+        titleHeader.textContent = "+ Tambah Berita & Foto Dokumentasi";
+        document.getElementById("news-edit-id").value = "";
+        document.getElementById("news-input-title").value = "";
+        document.getElementById("news-input-category").value = "Grand Opening";
+        document.getElementById("news-input-date").value = new Date().toISOString().slice(0, 10);
+        document.getElementById("news-input-branch").value = "";
+        document.getElementById("news-input-github-path").value = `./images/berita-${APP_DATA.news.length + 1}.jpg`;
+        document.getElementById("news-input-content").value = "";
+        draftNewsCover = "";
+        draftNewsGallery = [];
+      }
+
+      renderDraftNewsPreviews();
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeNewsEditorModal() {
+      const modal = document.getElementById("news-editor-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function handleNewsCoverUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        draftNewsCover = e.target.result;
+        document.getElementById("news-input-github-path").value = `./images/${file.name}`;
+        renderDraftNewsPreviews();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearNewsCoverDraft() {
+      draftNewsCover = "";
+      renderDraftNewsPreviews();
+    }
+
+    function handleNewsGalleryUpload(event) {
+      const files = Array.from(event.target.files || []);
+      if (files.length === 0) return;
+
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          draftNewsGallery.push(e.target.result);
+          renderDraftNewsPreviews();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function removeGalleryDraftAt(index) {
+      draftNewsGallery.splice(index, 1);
+      renderDraftNewsPreviews();
+    }
+
+    function renderDraftNewsPreviews() {
+      const coverBox = document.getElementById("news-cover-preview-box");
+      const coverImg = document.getElementById("news-cover-preview-img");
+      if (draftNewsCover) {
+        coverImg.src = draftNewsCover;
+        coverBox.classList.remove("hidden");
+      } else {
+        coverBox.classList.add("hidden");
+      }
+
+      const galleryGrid = document.getElementById("news-gallery-preview-grid");
+      galleryGrid.innerHTML = draftNewsGallery.map((src, idx) => `
+        <div class="relative rounded-xl overflow-hidden border border-baliPurple-200 bg-white aspect-square group">
+          <img src="${src}" alt="Galeri ${idx + 1}" class="w-full h-full object-cover" />
+          <button type="button" onclick="removeGalleryDraftAt(${idx})" class="absolute top-1 right-1 w-6 h-6 rounded-full bg-red-600 text-white text-xs font-bold shadow cursor-pointer">
+            ✕
+          </button>
+        </div>
+      `).join("");
+    }
+
+    function saveNewsArticle(event) {
+      event.preventDefault();
+      const editId = document.getElementById("news-edit-id").value;
+      const title = document.getElementById("news-input-title").value.trim();
+      const category = document.getElementById("news-input-category").value;
+      const date = document.getElementById("news-input-date").value;
+      const branch = document.getElementById("news-input-branch").value.trim();
+      const githubCoverPath = document.getElementById("news-input-github-path").value.trim();
+      const content = document.getElementById("news-input-content").value.trim();
+
+      if (!title || !content) {
+        const errBox = document.getElementById("news-form-error");
+        errBox.textContent = "Judul berita dan isi berita wajib diisi.";
+        errBox.classList.remove("hidden");
+        return;
+      }
+
+      if (editId) {
+        const idx = APP_DATA.news.findIndex(n => n.id === editId);
+        if (idx !== -1) {
+          APP_DATA.news[idx] = {
+            ...APP_DATA.news[idx],
+            title,
+            category,
+            date,
+            branch,
+            githubCoverPath,
+            coverImage: draftNewsCover,
+            galleryImages: [...draftNewsGallery],
+            content
+          };
+        }
+      } else {
+        APP_DATA.news.unshift({
+          id: "berita-" + Date.now(),
+          title,
+          category,
+          date,
+          branch,
+          githubCoverPath: githubCoverPath || "./images/berita-baru.jpg",
+          coverImage: draftNewsCover,
+          galleryImages: [...draftNewsGallery],
+          content
+        });
+      }
+
+      saveNewsToStorage();
+      renderNewsCategoryFilters();
+      renderNewsGrid();
+      updateGithubSnippetBox();
+      closeNewsEditorModal();
+    }
+
+    function deleteNewsArticle(id) {
+      APP_DATA.news = APP_DATA.news.filter(n => n.id !== id);
+      saveNewsToStorage();
+      renderNewsCategoryFilters();
+      renderNewsGrid();
+      updateGithubSnippetBox();
+      closeNewsReaderModal();
+    }
+
+    function openNewsReaderModal(id) {
+      const article = APP_DATA.news.find(n => n.id === id);
+      if (!article) return;
+
+      const readerModal = document.getElementById("news-reader-modal");
+      const container = document.getElementById("news-reader-content");
+      const allPhotos = [
+        ...(article.coverImage ? [article.coverImage] : []),
+        ...(Array.isArray(article.galleryImages) ? article.galleryImages : [])
+      ];
+
+      container.innerHTML = `
+        <div class="space-y-5">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="bg-baliPurple-900 text-amber-300 text-xs font-extrabold px-3.5 py-1 rounded-full uppercase">
+              ${article.category}
+            </span>
+            <span class="text-xs font-bold text-baliPurple-800">📅 ${formatIndonesianDate(article.date)}</span>
+            ${article.branch ? `<span class="text-xs font-bold text-baliPurple-800">• 📍 ${article.branch}</span>` : ""}
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-baliPurple-950 leading-tight">
+            ${article.title}
+          </h2>
+
+          ${article.coverImage ? `
+            <div class="rounded-2xl overflow-hidden bg-baliPurple-50 border border-baliPurple-200">
+              <img src="${article.coverImage}" alt="${article.title}" class="w-full max-h-[28rem] object-contain mx-auto" />
+            </div>
+          ` : ""}
+
+          <div class="text-sm sm:text-base text-baliPurple-950/85 leading-relaxed whitespace-pre-line">
+            ${article.content}
+          </div>
+
+          ${allPhotos.length > 0 ? `
+            <div class="pt-4 border-t border-baliPurple-100">
+              <h4 class="text-sm font-extrabold text-baliPurple-950 uppercase tracking-wider mb-3">
+                📸 Galeri Foto Dokumentasi (${allPhotos.length} Foto)
+              </h4>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                ${allPhotos.map((src, i) => `
+                  <a href="${src}" target="_blank" class="block rounded-2xl overflow-hidden border-2 border-baliPurple-100 hover:border-baliPurple-600 aspect-square bg-baliPurple-50">
+                    <img src="${src}" alt="Foto Dokumentasi ${i + 1}" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                  </a>
+                `).join("")}
+              </div>
+            </div>
+          ` : ""}
+
+          <div class="pt-5 border-t border-baliPurple-100 flex flex-wrap items-center justify-between gap-3">
+            <button onclick="closeNewsReaderModal(); openNewsEditorModal('${article.id}');" class="bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold px-5 py-2.5 rounded-full text-xs transition cursor-pointer">
+              ✏️ Edit Nama / Tambah Foto Galeri
+            </button>
+            <button onclick="deleteNewsArticle('${article.id}')" class="bg-red-50 hover:bg-red-100 text-red-700 font-bold px-4 py-2.5 rounded-full text-xs transition cursor-pointer">
+              🗑️ Hapus Berita Ini
+            </button>
+          </div>
+        </div>
+      `;
+
+      readerModal.classList.remove("hidden");
+      readerModal.classList.add("flex");
+    }
+
+    function closeNewsReaderModal() {
+      const readerModal = document.getElementById("news-reader-modal");
+      readerModal.classList.add("hidden");
+      readerModal.classList.remove("flex");
+    }
+
+    function saveOriginalPhotosToStorage() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(APP_DATA.images));
+      } catch (e) {}
+    }
+
+    function triggerPhotoSlotUpload(slotKey) {
+      activeTargetPhotoKey = slotKey;
+      const picker = document.getElementById("global-photo-picker");
+      picker.value = "";
+      picker.click();
+    }
+
+    function handleGlobalSlotFileChange(event) {
+      const file = event.target.files[0];
+      if (!file || !activeTargetPhotoKey) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const dataUrl = e.target.result;
+        APP_DATA.images[activeTargetPhotoKey] = dataUrl;
+        githubPathsState[activeTargetPhotoKey] = `./images/${file.name}`;
+        saveOriginalPhotosToStorage();
+        saveSlotNamesToStorage();
+        refreshAllVisualSlots();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetPhotoSlot(slotKey) {
+      const meta = PHOTO_SLOTS_META.find(m => m.key === slotKey);
+      APP_DATA.images[slotKey] = slotKey === "logoBrand" ? "./images/logo-exodrinks.png" : "";
+      if (meta) {
+        githubPathsState[slotKey] = meta.defaultPath;
+        slotLabelsState[slotKey] = meta.label;
+      }
+      syncSlotNamesToProducts();
+      saveSlotNamesToStorage();
+      saveOriginalPhotosToStorage();
+      refreshAllVisualSlots();
+      updateCartUI();
+    }
+
+    function refreshAllVisualSlots() {
+      applyCustomPhotoSlots();
+      renderMenu();
+      renderPhotoManagerGrid();
+      updateGithubSnippetBox();
+    }
+
+    function toggleMultiplyMode(enabled) {
+      useMultiplyMode = enabled;
+      renderMenu();
+    }
+
+    function formatRupiah(num) {
+      return "Rp " + num.toLocaleString("id-ID");
+    }
+
+    function applyCustomPhotoSlots() {
+      const filledCount = Object.values(APP_DATA.images).filter(Boolean).length;
+      const navCountEl = document.getElementById("uploaded-count-nav");
+      if (navCountEl) navCountEl.textContent = filledCount;
+
+      const navLogo = document.getElementById("navbar-logo-container");
+      const footerLogo = document.getElementById("footer-logo-container");
+      if (APP_DATA.images.logoBrand) {
+        const isLocalDefault = APP_DATA.images.logoBrand === "./images/logo-exodrinks.png";
+        const fallbackAttr = isLocalDefault ? ` data-fallback="image_337a81.png" onerror="if(!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback;}"` : "";
+        navLogo.innerHTML = `<img src="${APP_DATA.images.logoBrand}"${fallbackAttr} alt="${slotLabelsState.logoBrand}" class="h-10 w-auto object-contain logo-blend-dark" />`;
+        footerLogo.innerHTML = `<img src="${APP_DATA.images.logoBrand}"${fallbackAttr} alt="${slotLabelsState.logoBrand}" class="h-9 w-auto object-contain logo-blend-dark" />`;
+      } else {
+        navLogo.innerHTML = renderDefaultLogoMarkup("h-10");
+        footerLogo.innerHTML = renderDefaultLogoMarkup("h-9");
+      }
+
+      const puraImg = document.getElementById("hero-pura-img");
+      const puraSvg = document.getElementById("hero-pura-svg");
+      if (APP_DATA.images.puraBg) {
+        puraImg.dataset.triedFallback = "";
+        puraImg.src = APP_DATA.images.puraBg;
+        puraImg.classList.remove("hidden");
+        puraSvg.classList.add("hidden");
+      } else {
+        puraImg.classList.add("hidden");
+        puraSvg.classList.remove("hidden");
+      }
+
+      const heroBadgeLabel = document.getElementById("hero-slot-badge-label");
+      if (heroBadgeLabel) heroBadgeLabel.textContent = `⛩️ ${slotLabelsState.heroMascot}`;
+
+      const heroWrap = document.getElementById("hero-mascot-photo-wrap");
+      const heroImg = document.getElementById("hero-mascot-img");
+      const heroSvg = document.getElementById("hero-mascot-svg");
+      const btnHeroUpload = document.getElementById("btn-hero-upload");
+      const btnHeroReset = document.getElementById("btn-hero-reset");
+
+      if (APP_DATA.images.heroMascot) {
+        heroImg.src = APP_DATA.images.heroMascot;
+        heroImg.alt = slotLabelsState.heroMascot;
+        heroWrap.classList.remove("hidden");
+        heroSvg.classList.add("hidden");
+        btnHeroUpload.textContent = "🔄 Unggah Foto & Edit Nama";
+        btnHeroReset.classList.remove("hidden");
+      } else {
+        heroWrap.classList.add("hidden");
+        heroSvg.classList.remove("hidden");
+        btnHeroUpload.textContent = "+ Unggah Foto & Edit Nama";
+        btnHeroReset.classList.add("hidden");
+      }
+
+      const promoSlotTitle = document.getElementById("promo-slot-title");
+      if (promoSlotTitle) promoSlotTitle.textContent = `📸 ${slotLabelsState.promoBanner}`;
+
+      const promoWrap = document.getElementById("promo-photo-preview-wrap");
+      const promoImg = document.getElementById("promo-banner-img");
+      const btnPromoUpload = document.getElementById("btn-promo-upload");
+      const btnPromoReset = document.getElementById("btn-promo-reset");
+
+      if (APP_DATA.images.promoBanner) {
+        promoImg.src = APP_DATA.images.promoBanner;
+        promoImg.alt = slotLabelsState.promoBanner;
+        promoWrap.classList.remove("hidden");
+        btnPromoUpload.textContent = "🔄 Unggah Foto & Edit Nama";
+        btnPromoReset.classList.remove("hidden");
+      } else {
+        promoWrap.classList.add("hidden");
+        btnPromoUpload.textContent = "+ Unggah Foto & Edit Nama";
+        btnPromoReset.classList.add("hidden");
+      }
+
+      const outletShowcaseTitle = document.getElementById("outlet-showcase-title");
+      if (outletShowcaseTitle) outletShowcaseTitle.textContent = slotLabelsState.outletShowcase;
+
+      const outletBox = document.getElementById("outlet-photo-container");
+      const btnOutletUpload = document.getElementById("btn-outlet-upload");
+      const btnOutletReset = document.getElementById("btn-outlet-reset");
+
+      if (APP_DATA.images.outletShowcase) {
+        outletBox.innerHTML = `<img src="${APP_DATA.images.outletShowcase}" alt="${slotLabelsState.outletShowcase}" class="w-full h-full object-cover rounded-xl" />`;
+        outletBox.classList.remove("p-4", "border-dashed");
+        btnOutletUpload.textContent = "🔄 Unggah Foto & Edit Nama";
+        btnOutletReset.classList.remove("hidden");
+      } else {
+        outletBox.classList.add("p-4", "border-dashed");
+        outletBox.innerHTML = `
+          <span class="text-3xl mb-2">🏪</span>
+          <p class="text-xs font-extrabold text-baliPurple-950">${slotLabelsState.outletShowcase}</p>
+          <p class="text-[11px] text-baliPurple-950/60 mt-1">${githubPathsState.outletShowcase}</p>
+        `;
+        btnOutletUpload.textContent = "+ Unggah Foto & Edit Nama";
+        btnOutletReset.classList.add("hidden");
+      }
+    }
+
+    function getProductVisual(product) {
+      const originalSrc = APP_DATA.images[product.imageKey];
+      const blendClass = useMultiplyMode ? "photo-multiply" : "photo-pure";
+
+      if (originalSrc) {
+        return `
+          <div class="w-44 h-48 mx-auto rounded-3xl bg-white p-2.5 flex items-center justify-center shadow-md border-2 border-baliPurple-200 overflow-hidden relative group">
+            <img
+              src="${originalSrc}"
+              alt="${product.name}"
+              class="w-full h-full object-contain mx-auto rounded-2xl ${blendClass} transition duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="mt-2.5 flex items-center justify-center gap-1.5">
+            <button onclick="openSlotNameAndUploadModal('${product.imageKey}')" class="bg-baliPurple-100 hover:bg-baliPurple-200 text-baliPurple-950 font-extrabold px-3 py-1.5 rounded-full text-[11px] transition cursor-pointer">
+              🔄 Foto & Nama
+            </button>
+            <button onclick="resetPhotoSlot('${product.imageKey}')" class="bg-red-50 hover:bg-red-100 text-red-700 font-bold px-2.5 py-1.5 rounded-full text-[11px] transition cursor-pointer">
+              Reset
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div onclick="openSlotNameAndUploadModal('${product.imageKey}')" title="Klik untuk mengunggah foto & mengedit nama" class="w-44 h-48 mx-auto rounded-3xl bg-baliPurple-50 hover:bg-baliPurple-100/80 border-2 border-dashed border-baliPurple-300 hover:border-baliPurple-600 p-4 flex flex-col items-center justify-center text-center cursor-pointer transition group">
+          <div class="w-12 h-12 rounded-2xl bg-baliPurple-900 text-amber-300 flex items-center justify-center text-xl shadow group-hover:scale-110 transition">
+            📷
+          </div>
+          <p class="mt-2.5 text-xs font-extrabold text-baliPurple-950">${product.name}</p>
+          <p class="mt-0.5 text-[10px] text-baliPurple-950/60 leading-tight">${githubPathsState[product.imageKey] || product.recommendedPath}</p>
+        </div>
+        <button onclick="openSlotNameAndUploadModal('${product.imageKey}')" class="mt-2.5 w-full bg-amber-400 hover:bg-amber-300 text-baliPurple-950 font-extrabold px-3 py-2 rounded-full text-xs shadow-xs transition cursor-pointer">
+          + Unggah Foto & Edit Nama
+        </button>
+      `;
+    }
+
+    function setMenuFilter(filterValue) {
+      activeMenuFilter = filterValue;
+      document.querySelectorAll(".menu-filter-btn").forEach(btn => {
+        const isMatch = btn.dataset.menuFilter === filterValue;
+        btn.className = isMatch
+          ? "menu-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-baliPurple-900 text-amber-300 shadow-md transition cursor-pointer"
+          : "menu-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-baliPurple-900 border-2 border-baliPurple-200 hover:bg-baliPurple-100 transition cursor-pointer";
+      });
+      renderMenu();
+    }
+
+    function renderMenu() {
+      const grid = document.getElementById("menu-grid");
+      const list = activeMenuFilter === "all"
+        ? APP_DATA.products
+        : APP_DATA.products.filter(p => p.category === activeMenuFilter);
+
+      grid.innerHTML = list.map(item => {
+        const qtyInCart = cart[item.id] || 0;
+        return `
+          <article class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-baliPurple-200 hover:border-baliPurple-600 shadow-editorial flex flex-col sm:flex-row gap-6 items-center transition">
+            <div class="w-full sm:w-44 shrink-0 text-center">
+              ${getProductVisual(item)}
+              <span class="inline-block mt-2.5 bg-baliPurple-100 text-baliPurple-900 text-xs font-extrabold px-3.5 py-1 rounded-full">
+                ${item.size}
+              </span>
+            </div>
+
+            <div class="flex-1 text-center sm:text-left">
+              <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <span class="bg-baliPurple-900 text-amber-300 text-[11px] font-extrabold px-3 py-0.5 rounded-full uppercase">
+                  ${item.badge}
+                </span>
+                ${qtyInCart > 0 ? `<span class="bg-amber-400 text-baliPurple-950 text-[11px] font-black px-2.5 py-0.5 rounded-full">${qtyInCart}x di Keranjang</span>` : ""}
+              </div>
+
+              <h3 class="mt-2 text-xl sm:text-2xl font-extrabold text-baliPurple-950">${item.name}</h3>
+              <p class="mt-1 text-2xl sm:text-3xl font-black text-red-600">${formatRupiah(item.price)}</p>
+
+              <div class="mt-3 pt-3 border-t border-baliPurple-100">
+                <p class="text-xs font-extrabold text-baliPurple-900 uppercase">Komposisi:</p>
+                <p class="text-xs text-baliPurple-950/80 mt-0.5 leading-relaxed">${item.composition}</p>
+                ${item.note ? `<p class="text-[11px] font-bold text-baliPurple-700 italic mt-1.5">${item.note}</p>` : ""}
+              </div>
+
+              <div class="mt-5">
+                <button onclick="addToCart('${item.id}')" class="w-full sm:w-auto bg-baliPurple-800 hover:bg-baliPurple-950 text-white font-extrabold px-6 py-3 rounded-full text-sm shadow-md transition cursor-pointer">
+                  + Tambah ke Keranjang
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderRegionFilters() {
+      const regions = ["Semua", ...new Set(APP_DATA.outlets.map(o => o.region))];
+      const container = document.getElementById("region-filters");
+      container.innerHTML = regions.map(reg => {
+        const active = reg === activeRegion;
+        const count = reg === "Semua"
+          ? APP_DATA.outlets.length
+          : APP_DATA.outlets.filter(o => o.region === reg).length;
+        return `
+          <button onclick="setRegion('${reg}')" class="px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer ${
+            active
+              ? "bg-baliPurple-900 text-amber-300 shadow-md"
+              : "bg-white text-baliPurple-900 border border-baliPurple-200 hover:bg-baliPurple-100"
+          }">
+            ${reg} (${count})
+          </button>
+        `;
+      }).join("");
+    }
+
+    function setRegion(region) {
+      activeRegion = region;
+      renderRegionFilters();
+      renderOutlets();
+    }
+
+    function renderOutlets() {
+      const query = document.getElementById("outlet-search").value.toLowerCase().trim();
+      const filtered = APP_DATA.outlets.filter(o => {
+        const matchReg = activeRegion === "Semua" || o.region === activeRegion;
+        const matchText = o.name.toLowerCase().includes(query) ||
+                          o.address.toLowerCase().includes(query) ||
+                          o.region.toLowerCase().includes(query);
+        return matchReg && matchText;
+      });
+
+      const grid = document.getElementById("outlet-grid");
+      const emptyBox = document.getElementById("outlet-empty");
+
+      if (filtered.length === 0) {
+        grid.innerHTML = "";
+        emptyBox.classList.remove("hidden");
+        return;
+      }
+
+      emptyBox.classList.add("hidden");
+      grid.innerHTML = filtered.map(o => {
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Exodrinks " + o.name + " " + o.address)}`;
+        return `
+          <article class="bg-white rounded-2xl p-5 border-2 border-baliPurple-100 hover:border-baliPurple-600 shadow-xs flex flex-col justify-between transition">
+            <div>
+              <span class="inline-block bg-baliPurple-100 text-baliPurple-800 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">
+                ${o.region}
+              </span>
+              <h3 class="mt-2 text-lg font-extrabold text-baliPurple-950">Exodrinks — ${o.name}</h3>
+              <p class="mt-1.5 text-xs text-baliPurple-950/75 leading-relaxed">📍 ${o.address}</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-baliPurple-100 flex items-center gap-2">
+              <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-baliPurple-100 hover:bg-baliPurple-200 text-baliPurple-900 font-bold text-xs py-2.5 rounded-xl transition">
+                Google Maps
+              </a>
+              <button onclick="selectOutletAndOrder('${o.name}')" class="flex-1 bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-bold text-xs py-2.5 rounded-xl transition cursor-pointer">
+                Pesan dari Cabang Ini
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function populateOutletDropdown() {
+      const select = document.getElementById("selected-outlet");
+      select.innerHTML = APP_DATA.outlets.map(o =>
+        `<option value="${o.name} (${o.region})">Exodrinks ${o.name} — ${o.region}</option>`
+      ).join("");
+    }
+
+    function selectOutletAndOrder(outletName) {
+      const select = document.getElementById("selected-outlet");
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.startsWith(outletName)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      toggleCart(true);
+    }
+
+    function addToCart(id, qty = 1) {
+      cart[id] = (cart[id] || 0) + qty;
+      updateCartUI();
+      renderMenu();
+      toggleCart(true);
+    }
+
+    function addPromoBundle(cupCount) {
+      addToCart("ori-kecil", cupCount);
+    }
+
+    function changeQty(id, delta) {
+      if (!cart[id]) return;
+      cart[id] += delta;
+      if (cart[id] <= 0) delete cart[id];
+      updateCartUI();
+      renderMenu();
+    }
+
+    function clearCart() {
+      cart = {};
+      updateCartUI();
+      renderMenu();
+    }
+
+    function toggleCart(forceOpen) {
+      const drawer = document.getElementById("cart-drawer");
+      if (forceOpen === true) {
+        drawer.classList.remove("hidden");
+      } else if (forceOpen === false) {
+        drawer.classList.add("hidden");
+      } else {
+        drawer.classList.toggle("hidden");
+      }
+    }
+
+    function updateCartUI() {
+      const itemsContainer = document.getElementById("cart-items");
+      const badge = document.getElementById("cart-badge");
+      const totalEl = document.getElementById("cart-total");
+      const promoEl = document.getElementById("promo-status");
+
+      let totalQty = 0;
+      let totalPrice = 0;
+      const entries = Object.entries(cart);
+
+      if (entries.length === 0) {
+        itemsContainer.innerHTML = `
+          <div class="p-6 rounded-2xl bg-baliPurple-50 text-center border border-baliPurple-100">
+            <p class="text-sm font-bold text-baliPurple-950">Keranjang masih kosong</p>
+            <p class="text-xs text-baliPurple-950/65 mt-1">Pilih varian Es Teler Ori atau Es Teler Durian terlebih dahulu.</p>
+          </div>
+        `;
+      } else {
+        document.getElementById("cart-empty-warning").classList.add("hidden");
+        itemsContainer.innerHTML = entries.map(([id, qty]) => {
+          const prod = APP_DATA.products.find(p => p.id === id);
+          totalQty += qty;
+          totalPrice += prod.price * qty;
+          return `
+            <div class="flex items-center justify-between bg-baliPurple-50 p-3.5 rounded-2xl border border-baliPurple-100">
+              <div>
+                <p class="text-sm font-extrabold text-baliPurple-950">${prod.name}</p>
+                <p class="text-xs font-bold text-red-600">${formatRupiah(prod.price * qty)} (${qty}x)</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="changeQty('${id}', -1)" class="w-7 h-7 rounded-full bg-white border border-baliPurple-200 font-bold text-baliPurple-900 cursor-pointer">-</button>
+                <span class="w-6 text-center text-sm font-extrabold">${qty}</span>
+                <button onclick="changeQty('${id}', 1)" class="w-7 h-7 rounded-full bg-baliPurple-900 text-white font-bold cursor-pointer">+</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      badge.textContent = totalQty;
+      totalEl.textContent = formatRupiah(totalPrice);
+
+      const freeCups = Math.floor(totalQty / 40);
+      const isFreeOngkir = totalQty >= 30;
+      let promoHtml = "";
+
+      if (isFreeOngkir) {
+        promoHtml += `<div class="bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-extrabold px-3.5 py-2.5 rounded-xl">🎉 Selamat! Anda mendapat *FREE ONGKIR (Min. 30 Cup)</div>`;
+      } else if (totalQty > 0) {
+        promoHtml += `<div class="bg-baliPurple-50 text-baliPurple-800 text-xs font-semibold px-3.5 py-2 rounded-xl">Tambah <strong>${30 - totalQty} cup</strong> lagi untuk mendapat *FREE ONGKIR</div>`;
+      }
+
+      if (freeCups > 0) {
+        promoHtml += `<div class="bg-amber-50 border border-amber-300 text-amber-900 text-xs font-extrabold px-3.5 py-2.5 rounded-xl">🎁 Bonus Kelipatan 40 Cup: *FREE ${freeCups} CUP</div>`;
+      }
+
+      promoEl.innerHTML = promoHtml;
+    }
+
+    function checkoutWhatsApp() {
+      const entries = Object.entries(cart);
+      if (entries.length === 0) {
+        document.getElementById("cart-empty-warning").classList.remove("hidden");
+        return;
+      }
+
+      const outlet = document.getElementById("selected-outlet").value;
+      let totalQty = 0;
+      let totalPrice = 0;
+      const lines = [
+        "Halo *Exodrinks In Bali*! Saya ingin memesan:",
+        `📍 *Cabang:* ${outlet}`,
+        ""
+      ];
+
+      entries.forEach(([id, qty]) => {
+        const prod = APP_DATA.products.find(p => p.id === id);
+        totalQty += qty;
+        totalPrice += prod.price * qty;
+        lines.push(`• ${prod.name} (${qty}x) = ${formatRupiah(prod.price * qty)}`);
+      });
+
+      const freeCups = Math.floor(totalQty / 40);
+      lines.push("");
+      lines.push(`*Total Cup:* ${totalQty} Cup`);
+      if (totalQty >= 30) lines.push("✅ *Promo:* *FREE ONGKIR (Pembelian >= 30 Cup)");
+      if (freeCups > 0) lines.push(`🎁 *Bonus:* *FREE ${freeCups} CUP (Kelipatan 40 Cup)`);
+      lines.push(`💰 *Total Estimasi:* ${formatRupiah(totalPrice)}`);
+
+      const url = `https://wa.me/${APP_DATA.whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function togglePreviewModal(show) {
+      const modal = document.getElementById("preview-modal");
+      if (show) {
+        renderPhotoManagerGrid();
+        updateGithubSnippetBox();
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      } else {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    }
+
+    function renderPhotoManagerGrid() {
+      const grid = document.getElementById("photo-manager-grid");
+      if (!grid) return;
+
+      grid.innerHTML = PHOTO_SLOTS_META.map((slot, index) => {
+        const src = APP_DATA.images[slot.key];
+        const currentLabel = slotLabelsState[slot.key] || slot.label;
+        const isDefaultLogo = slot.key === "logoBrand" && src === "./images/logo-exodrinks.png";
+        const fallbackAttr = isDefaultLogo ? ` data-fallback="image_337a81.png" onerror="if(!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback;}"` : "";
+        return `
+          <div class="p-4 rounded-2xl bg-baliPurple-50 border border-baliPurple-200 flex flex-col justify-between gap-3">
+            <div>
+              <p class="text-xs font-extrabold text-baliPurple-950">${index + 1}. ${currentLabel}</p>
+              <p class="text-[10px] font-mono text-baliPurple-700 mt-0.5 truncate">${githubPathsState[slot.key]}</p>
+            </div>
+
+            <div class="w-full h-28 rounded-xl bg-white border border-baliPurple-200 flex items-center justify-center overflow-hidden p-2">
+              ${src
+                ? `<img src="${src}"${fallbackAttr} alt="${currentLabel}" class="w-full h-full object-contain rounded-lg" />`
+                : `<span class="text-xs text-baliPurple-950/45 font-bold">Belum ada foto</span>`
+              }
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <button onclick="openSlotNameAndUploadModal('${slot.key}')" class="flex-1 bg-baliPurple-900 hover:bg-baliPurple-800 text-amber-300 font-extrabold py-2 px-3 rounded-xl text-[11px] transition cursor-pointer">
+                ✏️ Unggah & Edit Nama
+              </button>
+              ${src
+                ? `<button onclick="resetPhotoSlot('${slot.key}')" class="bg-red-100 hover:bg-red-200 text-red-700 font-bold py-2 px-2.5 rounded-xl text-[11px] transition cursor-pointer">Reset</button>`
+                : ""
+              }
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function updateGithubSnippetBox() {
+      const box = document.getElementById("github-snippet-box");
+      if (!box) return;
+      const lines = PHOTO_SLOTS_META.map(slot => `  ${slot.key}: "${githubPathsState[slot.key]}", /* nama: "${(slotLabelsState[slot.key] || slot.label).replace(/"/g, '\\"')}" */`);
+      const newsSample = APP_DATA.news.map(n => `  {\n    id: "${n.id}",\n    title: "${n.title.replace(/"/g, '\\"')}",\n    category: "${n.category}",\n    date: "${n.date}",\n    branch: "${(n.branch || "").replace(/"/g, '\\"')}",\n    coverImage: "${n.githubCoverPath || "./images/berita.jpg"}",\n    galleryImages: ["./images/galeri-1.jpg", "./images/galeri-2.jpg"],\n    content: "${n.content.replace(/"/g, '\\"')}"\n  }`).join(",\n");
+      box.value = `images: {\n${lines.join("\n")}\n},\nnews: [\n${newsSample}\n],`;
+    }
+
+    function copySnippetToClipboard() {
+      const box = document.getElementById("github-snippet-box");
+      box.select();
+      box.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      document.getElementById("copy-feedback").classList.remove("hidden");
+    }
+
+    function downloadHtmlWithEmbeddedPhotos() {
+      const currentDocHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const serializedImagesBlock = `images: ${JSON.stringify(APP_DATA.images, null, 8)}`;
+      const serializedNewsBlock = `news: ${JSON.stringify(APP_DATA.news, null, 8)}`;
+      const updatedHtml = currentDocHtml
+        .replace(/images:\s*\{[\s\S]*?\n\s*\}/, serializedImagesBlock)
+        .replace(/news:\s*\[[\s\S]*?\n\s*\]/, serializedNewsBlock);
+
+      const blob = new Blob([updatedHtml], { type: "text/html;charset=utf-8" });
+      const downloadUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = downloadUrl;
+      a.download = "index.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(downloadUrl);
+
+      document.getElementById("copy-feedback").classList.remove("hidden");
+    }
+
+    document.getElementById("year-copy").textContent = new Date().getFullYear();
+    document.getElementById("mobile-nav-btn").addEventListener("click", () => {
+      document.getElementById("mobile-nav-menu").classList.toggle("hidden");
+    });
+    document.querySelectorAll(".mobile-link").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("mobile-nav-menu").classList.add("hidden");
+      });
+    });
+
+    loadSavedOriginalPhotos();
+    loadSavedNews();
+    applyCustomPhotoSlots();
+    renderMenu();
+    renderNewsCategoryFilters();
+    renderNewsGrid();
+    renderRegionFilters();
+    renderOutlets();
+    populateOutletDropdown();
+    updateCartUI();
+  </script>
+</body>
+</html>
